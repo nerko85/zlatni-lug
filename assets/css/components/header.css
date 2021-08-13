@@ -5,6 +5,7 @@ header {
   height: 80px;
   width: 100%;
   z-index: 999;
+  padding: 3rem 0;
 }
 
 header .inner {
@@ -37,6 +38,16 @@ header .inner ul {
 header .inner ul li {
   font-size: 1.8rem;
   margin-left: 6.1rem;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
+
+header .inner ul li.logo {
+  margin-top: 0;
+}
+
+header .inner ul li.logo img {
+  width: 182px;
 }
 
 header .inner .contact {

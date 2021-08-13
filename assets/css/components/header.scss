@@ -1,35 +1,51 @@
 header {
-    position:absolute;
-    top:0;
-    left:0;
-    height:80px;
-    width:100%;
-    z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 100%;
+  z-index: 999;
+  padding: 3rem 0;
 
-    .inner {
-        display: flex;
-        justify-content: center;
-        width:80%;
-        max-width: 800px;
-        margin: 0 auto;
+  .inner {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
 
-        ul {
-            display:flex;
-            justify-content: center;
-            flex:auto;
-            list-style: none;
-            padding:0;
-            margin:0;
+    ul {
+      display: flex;
+      justify-content: center;
+      flex: auto;
+      list-style: none;
+      padding: 0;
+      margin: 0;
 
-            li {
-                font-size:1.8rem;
-                margin-left:6.1rem;
-            }
+      li {
+        font-size: 1.8rem;
+        margin-left: 6.1rem;
+        margin-top: 2.6rem;
+
+        &.logo {
+          margin-top: 0;
+          img {
+            width: 182px;
+          }
         }
 
-        .contact {
-            position: absolute;
-            right: 0;
+        a {
+          text-transform: uppercase;
+          color: $white;
+          text-decoration: none;
+          font-size: 1.4rem;
         }
+      }
     }
+
+    .contact {
+      position: absolute;
+      right: 0;
+    }
+  }
 }
