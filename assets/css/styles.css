@@ -358,6 +358,7 @@ html,
 body {
   font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overscroll-behavior-y: none;
+  color: #52575d;
 }
 
 h1,
@@ -377,8 +378,14 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 4.3rem;
+  margin: 2rem 0;
+  color: #52575d;
+}
+
 h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 @media (max-width: 1152px) {
@@ -396,6 +403,19 @@ p {
 a {
   color: #ffffff;
   text-decoration: none;
+  font-family: "Cormorant";
+}
+
+a.read--more {
+  color: #ce8163;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+a.read--more i {
+  margin-left: 0.6rem;
+  color: #52575d;
 }
 
 @media (max-width: 1920px) {
@@ -423,8 +443,7 @@ a {
 }
 
 .container {
-  width: 1345px;
-  min-width: 1345px;
+  max-width: 1345px;
   margin: 0 auto;
   position: relative;
 }
@@ -458,35 +477,30 @@ a {
 @media (max-width: 1440px) {
   .container {
     width: 1153px;
-    min-width: 1153px;
   }
 }
 
 @media (max-width: 1152px) {
   .container {
     width: 961px;
-    min-width: 961px;
   }
 }
 
 @media (max-width: 960px) {
   .container {
     width: 767px;
-    min-width: 767px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
     width: 481px;
-    min-width: 481px;
   }
 }
 
 @media (max-width: 480px) {
   .container {
     width: 100%;
-    min-width: 320px;
   }
   .container .sm-block {
     display: block !important;
@@ -622,9 +636,9 @@ header .inner ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
@@ -635,7 +649,6 @@ header .inner ul {
 
 header .inner ul li {
   font-size: 1.8rem;
-  margin-left: 6.1rem;
   margin-top: 2.6rem;
 }
 
@@ -666,6 +679,7 @@ header .inner .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  background: url("../images/happy-senior-gardening.png") no-repeat center;
 }
 
 .cover::after {
@@ -727,43 +741,52 @@ header .inner .contact {
 
 .cover--video {
   position: absolute;
-  bottom: 20px;
+  bottom: 100px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  color: #ffffff;
 }
 
-#about .card {
+#about {
+  background: #f3f2f0;
+  margin-bottom: -2rem;
+}
+
+.card {
   position: relative;
-  top: -5rem;
-  max-width: 1000px;
-  width: 80%;
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  max-height: 450px;
   background: #ffffff;
 }
 
-#about .card > * {
+.card--small {
+  top: -5rem;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.card > * {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
 }
 
-#about .card--img {
+.card--img {
   overflow: hidden;
 }
 
-#about .card--img img {
+.card--img img {
   width: 100%;
   height: 100%;
+  max-height: 450px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-#about .card--body {
+.card--body {
   padding: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -777,15 +800,100 @@ header .inner .contact {
           justify-content: center;
 }
 
-#about .card--body h2 {
-  font-size: 3.6rem;
-  margin: 2rem 0;
-  color: #52575d;
+.card--full {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-#about .card--body a {
-  color: #ce8163;
-  font-size: 1.4rem;
-  text-transform: uppercase;
+.card--full > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
+
+.card--full .card--img img {
+  min-height: 700px;
+}
+
+.card--full .card--body {
+  padding: 15rem 10rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.card--full .line {
+  width: 200px;
+  height: 2px;
+  background: #e6b59e;
+  display: inline-block;
+}
+
+.card--reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.services {
+  background-color: #f3f2f0;
+  text-align: center;
+  padding: 1rem 0 7rem;
+  background-image: url("../images/leaf-inverse.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: -20rem;
+  background-position-y: 20rem;
+}
+
+.services--grid {
+  padding: 3rem 0;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1rem;
+}
+
+.services--grid .services--item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.services--grid .services--item .img--wrapp {
+  cursor: pointer;
+  width: 90px;
+  height: 90px;
+  background: #e6b59e;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.services--grid .services--item .img--wrapp img {
+  margin: auto;
+  height: 50px;
+  width: 50px;
+}
+
+.services--grid .services--item:hover .img--wrapp {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=styles.css.map */

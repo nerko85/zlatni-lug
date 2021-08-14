@@ -8,6 +8,7 @@
   width: 100%;
   position: relative;
   display: flex;
+  background: url("../images/happy-senior-gardening.png") no-repeat center;
 
   &::after {
     content: "";
@@ -55,53 +56,125 @@
 
   &--video {
     position: absolute;
-    bottom: 20px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
+    color: $white;
   }
 }
 
 #about {
-  .card {
-    position: relative;
+  background: $background;
+  margin-bottom: -2rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  background: $white;
+
+  &--small {
     top: -5rem;
-    max-width: 1000px;
-    width: 80%;
+    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
+  }
+
+  & > * {
+    flex: 1 0 50%;
+  }
+
+  &--img {
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 450px;
+      object-fit: cover;
+    }
+  }
+
+  &--body {
+    padding: 4rem;
     display: flex;
-    max-height: 450px;
-    background: $white;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &--full {
+    display: flex;
 
     & > * {
       flex: 1 0 50%;
     }
-
-    &--img {
-      overflow: hidden;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    .card--img img {
+      min-height: 700px;
     }
 
-    &--body {
-      padding: 4rem;
+    .card--body {
+      padding: 15rem 10rem;
+      justify-content: space-evenly;
+    }
+
+    .line {
+      width: 200px;
+      height: 2px;
+      background: $copper;
+      display: inline-block;
+    }
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+.services {
+  background-color: $background;
+  text-align: center;
+  padding: 1rem 0 7rem;
+  background-image: url("../images/leaf-inverse.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: -20rem;
+  background-position-y: 20rem;
+
+  &--grid {
+    padding: 3rem 0;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1rem;
+
+    .services--item {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
 
-      h2 {
-        font-size: 3.6rem;
-        margin: 2rem 0;
-        color: $text;
+      .img--wrapp {
+        cursor: pointer;
+        width: 90px;
+        height: 90px;
+        background: $copper;
+        border-radius: 50%;
+        display: flex;
+        transition: all 0.3s ease-in-out;
+
+        img {
+          margin: auto;
+          height: 50px;
+          width: 50px;
+        }
       }
 
-      a {
-        color: $secoundary;
-        font-size: 1.4rem;
-        text-transform: uppercase;
+      &:hover {
+        .img--wrapp {
+          transform: scale(1.05);
+          //   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px 0px;
+        }
       }
     }
   }

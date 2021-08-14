@@ -16,7 +16,7 @@ header {
 
     ul {
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       flex: auto;
       list-style: none;
       padding: 0;
@@ -24,7 +24,6 @@ header {
 
       li {
         font-size: 1.8rem;
-        margin-left: 6.1rem;
         margin-top: 2.6rem;
 
         &.logo {

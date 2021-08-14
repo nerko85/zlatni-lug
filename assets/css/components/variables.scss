@@ -20,6 +20,8 @@ $xlarge: "1920px";
 // color
 $primary: #ffcb84;
 $secoundary: #ce8163;
+$copper: #e6b59e;
+$background: #f3f2f0;
 $red: #5e2431;
 $text: #52575d;
 $links: #ffe5e5;
@@ -46,6 +48,7 @@ body {
   font-family: $raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overscroll-behavior-y: none;
+  color: $text;
 }
 
 h1,
@@ -65,8 +68,14 @@ h1 {
   font-weight: bold;
 }
 
+h2 {
+  font-size: 4.3rem;
+  margin: 2rem 0;
+  color: $text;
+}
+
 h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
 
   @media (max-width: $desktop) {
     font-size: 1.6rem;
@@ -82,6 +91,19 @@ p {
 a {
   color: $white;
   text-decoration: none;
+  font-family: $cormorant;
+
+  &.read--more {
+    color: $secoundary;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    i {
+      margin-left: 0.6rem;
+      color: $text;
+    }
+  }
 }
 
 .mobile {
@@ -104,8 +126,8 @@ a {
 
 // Container
 .container {
-  width: 1345px;
-  min-width: 1345px;
+  //   width: 1345px;
+  max-width: 1345px;
   margin: 0 auto;
   position: relative;
 
@@ -131,27 +153,27 @@ a {
 
   @media (max-width: $widescreen) {
     width: 1153px;
-    min-width: 1153px;
+    // min-width: 1153px;
   }
 
   @media (max-width: $desktop) {
     width: 961px;
-    min-width: 961px;
+    // min-width: 961px;
   }
 
   @media (max-width: $laptop) {
     width: 767px;
-    min-width: 767px;
+    // min-width: 767px;
   }
 
   @media (max-width: $tablet) {
     width: 481px;
-    min-width: 481px;
+    // min-width: 481px;
   }
 
   @media (max-width: $mobile) {
     width: 100%;
-    min-width: 320px;
+    // min-width: 320px;
     .sm-block {
       display: block !important;
     }
