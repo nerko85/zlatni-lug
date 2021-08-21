@@ -9,6 +9,8 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -39,6 +41,7 @@ h2 {
   font-size: 4.3rem;
   margin: 2rem 0;
   color: #52575d;
+  font-weight: 600;
 }
 
 h3 {
@@ -61,6 +64,7 @@ a {
   color: #ffffff;
   text-decoration: none;
   font-family: "Cormorant";
+  font-size: 1.4rem;
 }
 
 a.read--more {
@@ -118,8 +122,7 @@ a.read--more i {
 
 @media (max-width: 1660px) {
   .container {
-    width: 1440px;
-    min-width: 1440px;
+    max-width: 1440px;
   }
   .container .sm-block {
     display: none !important;

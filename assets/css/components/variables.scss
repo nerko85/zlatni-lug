@@ -23,7 +23,9 @@ $secoundary: #ce8163;
 $copper: #e6b59e;
 $background: #f3f2f0;
 $red: #5e2431;
+$valvet: #551322;
 $text: #52575d;
+$gray: #808080;
 $links: #ffe5e5;
 $black: #000;
 $white: #ffffff;
@@ -41,6 +43,8 @@ $cormorant: "Cormorant";
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html,
@@ -72,6 +76,7 @@ h2 {
   font-size: 4.3rem;
   margin: 2rem 0;
   color: $text;
+  font-weight: 600;
 }
 
 h3 {
@@ -92,6 +97,7 @@ a {
   color: $white;
   text-decoration: none;
   font-family: $cormorant;
+  font-size: 1.4rem;
 
   &.read--more {
     color: $secoundary;
@@ -141,8 +147,8 @@ a {
   }
 
   @media (max-width: $large) {
-    width: 1440px;
-    min-width: 1440px;
+    // width: 1440px;
+    max-width: 1440px;
     .sm-block {
       display: none !important;
     }

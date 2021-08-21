@@ -100,6 +100,14 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    > h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 3rem 0;
+    }
   }
 
   &--full {
@@ -113,13 +121,24 @@
     }
 
     .card--body {
-      padding: 15rem 10rem;
-      justify-content: space-evenly;
+      padding: 1rem;
+
+      .body--inner {
+        border: 1px solid $secoundary;
+        padding: 15rem 10rem;
+        justify-content: space-evenly;
+        height: 100%;
+
+        a {
+          display: inline-block;
+          margin-top: 4rem;
+        }
+      }
     }
 
     .line {
-      width: 200px;
-      height: 2px;
+      width: 150px;
+      height: 1px;
       background: $copper;
       display: inline-block;
     }
@@ -176,6 +195,117 @@
           //   box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 16px 0px;
         }
       }
+    }
+  }
+}
+
+.testimonial {
+  padding: 7rem 0;
+  text-align: center;
+  background: $background;
+  background-image: url("../images/leaf-inverse.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: -20rem;
+  background-position-y: 26rem;
+
+  h2 {
+    margin-bottom: 4rem;
+  }
+
+  .container {
+    position: relative;
+    .swiper-container {
+      .content {
+        width: 50%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .img--wrapp {
+          height: 120px;
+          width: 92px;
+          border: 1px solid $secoundary;
+          border-radius: 46px;
+          display: flex;
+          img {
+            margin: auto;
+            width: 100%;
+            padding: 3px;
+          }
+        }
+
+        p {
+          font-family: $cormorant;
+          font-size: 1.9rem;
+          color: $secoundary;
+          font-style: italic;
+          font-weight: 400;
+          margin: 3rem 0;
+        }
+
+        span {
+          text-transform: uppercase;
+          font-size: 1.8rem;
+          font-style: italic;
+          font-family: $cormorant;
+        }
+      }
+
+      .swiper-custom-btn {
+        position: absolute;
+        top: 50%;
+        width: 60px;
+        height: 60px;
+        border: 1px solid $secoundary;
+        border-radius: 50%;
+        display: flex;
+        transform: translateY(-50%);
+        cursor: pointer;
+        z-index: 99;
+
+        &.button-next {
+          right: 0;
+        }
+
+        &:active:focus-within {
+          outline: none;
+        }
+
+        i {
+          margin: auto;
+          color: $secoundary;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.contact {
+  padding: 1rem;
+
+  &--inner {
+    border: 1px solid $secoundary;
+    padding: 5rem 0;
+  }
+
+  &--content {
+    max-width: 600px;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+
+    h1 {
+      color: $secoundary;
+    }
+
+    .location {
+      color: $gray;
+      font-size: 1.4rem;
+      text-transform: uppercase;
     }
   }
 }
