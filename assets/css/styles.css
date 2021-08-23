@@ -7,6 +7,7 @@
  */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap");
 html {
   line-height: 1.15;
   /* 1 */
@@ -649,18 +650,23 @@ footer .footer--inner .footer--location {
 footer .footer--inner .footer--location span {
   width: 44px;
   height: 44px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border: 1px solid #fff;
   border-radius: 50%;
   margin-right: 1.6rem;
 }
 
 footer .footer--inner .footer--location span a {
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #ffcb84;
   font-size: 1.5rem;
+}
+
+footer .footer--inner .footer--location span a i {
+  margin: auto;
 }
 
 footer .footer--inner .footer--location .location--details p {
@@ -689,15 +695,20 @@ footer .footer--inner .footer--social li span {
   height: 44px;
   border: 1px solid #fff;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 footer .footer--inner .footer--social li span a {
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #ffcb84;
   font-size: 1.5rem;
+}
+
+footer .footer--inner .footer--social li span a i {
+  margin: auto;
 }
 
 footer .footer--nav {
@@ -781,6 +792,135 @@ header .inner ul li a {
 header .inner .contact {
   position: absolute;
   right: 0;
+}
+
+.hero {
+  background: url("../images/happy-senior-gardening.png") no-repeat center;
+  background-size: cover;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(94, 36, 49, 0.82);
+  z-index: 0;
+}
+
+.hero--inner {
+  height: 50vh;
+  max-height: 540px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 9;
+}
+
+.hero--inner h1 {
+  margin: auto;
+  color: #fff;
+}
+
+.testimonial {
+  padding: 7rem 0;
+  text-align: center;
+  background: #f3f2f0;
+  background-image: url("../images/leaf-inverse.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: -20rem;
+  background-position-y: 26rem;
+}
+
+.testimonial h2 {
+  margin-bottom: 4rem;
+}
+
+.testimonial .container {
+  position: relative;
+}
+
+.testimonial .container .swiper-container .content {
+  width: 50%;
+  max-width: 719px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.testimonial .container .swiper-container .content .img--wrapp {
+  height: 120px;
+  width: 92px;
+  border: 1px solid #ce8163;
+  border-radius: 46px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.testimonial .container .swiper-container .content .img--wrapp img {
+  margin: auto;
+  width: 100%;
+  padding: 3px;
+}
+
+.testimonial .container .swiper-container .content p {
+  font-family: "Cormorant";
+  font-size: 1.9rem;
+  color: #ce8163;
+  font-style: italic;
+  font-weight: 400;
+  margin: 3rem 0;
+}
+
+.testimonial .container .swiper-container .content span {
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-family: "Cormorant";
+}
+
+.testimonial .container .swiper-container .swiper-custom-btn {
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ce8163;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 99;
+}
+
+.testimonial .container .swiper-container .swiper-custom-btn.button-next {
+  right: 0;
+}
+
+.testimonial .container .swiper-container .swiper-custom-btn:active:focus-within {
+  outline: none;
+}
+
+.testimonial .container .swiper-container .swiper-custom-btn i {
+  margin: auto;
+  color: #ce8163;
+  font-size: 1.5rem;
 }
 
 .cover {
@@ -1027,103 +1167,6 @@ header .inner .contact {
           transform: scale(1.05);
 }
 
-.testimonial {
-  padding: 7rem 0;
-  text-align: center;
-  background: #f3f2f0;
-  background-image: url("../images/leaf-inverse.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position-x: -20rem;
-  background-position-y: 26rem;
-}
-
-.testimonial h2 {
-  margin-bottom: 4rem;
-}
-
-.testimonial .container {
-  position: relative;
-}
-
-.testimonial .container .swiper-container .content {
-  width: 50%;
-  max-width: 600px;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.testimonial .container .swiper-container .content .img--wrapp {
-  height: 120px;
-  width: 92px;
-  border: 1px solid #ce8163;
-  border-radius: 46px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.testimonial .container .swiper-container .content .img--wrapp img {
-  margin: auto;
-  width: 100%;
-  padding: 3px;
-}
-
-.testimonial .container .swiper-container .content p {
-  font-family: "Cormorant";
-  font-size: 1.9rem;
-  color: #ce8163;
-  font-style: italic;
-  font-weight: 400;
-  margin: 3rem 0;
-}
-
-.testimonial .container .swiper-container .content span {
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-style: italic;
-  font-family: "Cormorant";
-}
-
-.testimonial .container .swiper-container .swiper-custom-btn {
-  position: absolute;
-  top: 50%;
-  width: 60px;
-  height: 60px;
-  border: 1px solid #ce8163;
-  border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  cursor: pointer;
-  z-index: 99;
-}
-
-.testimonial .container .swiper-container .swiper-custom-btn.button-next {
-  right: 0;
-}
-
-.testimonial .container .swiper-container .swiper-custom-btn:active:focus-within {
-  outline: none;
-}
-
-.testimonial .container .swiper-container .swiper-custom-btn i {
-  margin: auto;
-  color: #ce8163;
-  font-size: 1.5rem;
-}
-
 .contact {
   padding: 1rem;
 }
@@ -1148,5 +1191,206 @@ header .inner .contact {
   color: #808080;
   font-size: 1.4rem;
   text-transform: uppercase;
+}
+
+.company {
+  padding: 10rem 0 20rem;
+  background: #f3f2f0;
+}
+
+.company--inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.company--inner > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
+
+.company--inner .img--section {
+  margin-right: 8rem;
+  position: relative;
+}
+
+.company--inner .img--section .img--wrapp {
+  max-height: 485px;
+  overflow: hidden;
+}
+
+.company--inner .img--section .img--wrapp img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.company--inner .img--section .ceo--section {
+  padding: 1rem;
+  position: absolute;
+  z-index: 1;
+  bottom: -13rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background: #fff;
+  min-width: 370px;
+}
+
+.company--inner .img--section .ceo--section .inner {
+  padding: 1.6rem;
+  border: 1px solid #ffcb84;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.company--inner .img--section .ceo--section .inner p {
+  font-size: 1.2rem;
+  line-height: 2.6rem;
+  font-style: italic;
+}
+
+.company--inner .img--section .ceo--section .inner .ceo--details {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.company--inner .img--section .ceo--section .inner .ceo--details > span {
+  width: 50px;
+  height: 50px;
+  margin-right: 2rem;
+}
+
+.company--inner .img--section .ceo--section .inner .ceo--details > span img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.company--inner .img--section .ceo--section .inner .ceo--details .ceo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.company--inner .img--section .ceo--section .inner .ceo--details .ceo p {
+  font-family: "Bodoni Moda", serif;
+  font-style: normal;
+  font-size: 1.4rem;
+}
+
+.about--slider {
+  background: #f3f2f0;
+}
+
+.about--slider .img--wrapp {
+  max-height: 452px;
+  overflow: hidden;
+}
+
+.about--slider .img--wrapp img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.about--slider .content--body {
+  background: #5e2431;
+  padding: 5rem 0;
+}
+
+.about--slider .content--body p {
+  color: #fff;
+  width: 80%;
+  max-width: 685px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.about--slider .swiper-container .swiper-pagination {
+  bottom: 41%;
+}
+
+.about--slider .swiper-container .swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  opacity: 0.2;
+}
+
+.about--slider .swiper-container .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+}
+
+.about--slider .swiper-container .swiper-custom-btn {
+  position: absolute;
+  top: 50%;
+  left: 5rem;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ce8163;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 99;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.about--slider .swiper-container .swiper-custom-btn.button-next {
+  right: 5rem;
+  left: unset;
+}
+
+.about--slider .swiper-container .swiper-custom-btn:active:focus-within {
+  outline: none;
+}
+
+.about--slider .swiper-container .swiper-custom-btn i {
+  margin: auto;
+  color: #ce8163;
+  font-size: 1.5rem;
+}
+
+.team {
+  padding: 9rem 0;
+  background: #f3f2f0;
+  text-align: center;
+}
+
+.team p {
+  width: 50%;
+  max-width: 546px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+.team .inner {
+  display: -ms-grid;
+  display: grid;
 }
 /*# sourceMappingURL=styles.css.map */
