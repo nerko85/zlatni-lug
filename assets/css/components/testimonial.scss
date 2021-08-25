@@ -15,6 +15,7 @@
   .container {
     position: relative;
     .swiper-container {
+      overflow: hidden;
       .content {
         width: 50%;
         max-width: 719px;
@@ -69,7 +70,7 @@
           right: 0;
         }
 
-        &:active:focus-within {
+        &:focus-within {
           outline: none;
         }
 

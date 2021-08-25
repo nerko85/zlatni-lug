@@ -58,15 +58,15 @@
       <div class="container-fluid">
         <div class="inner">
           <ul>
-            <li><a href="about">O nama</a></li>
-            <li><a href="services">Usluge</a></li>
+            <li><a href="./about.html">O nama</a></li>
+            <li><a href="./services.html">Usluge</a></li>
             <li class="logo">
               <a href="/index.html"
                 ><img src="./assets/images/logo.svg" alt="Zlatni Lug logo"
               /></a>
             </li>
-            <li><a href="news">Novosti</a></li>
-            <li><a href="contact">Kontakt</a></li>
+            <li><a href="./news.html">Novosti</a></li>
+            <li><a href="./contact.html">Kontakt</a></li>
           </ul>
           <div class="contact">
             <span><i class="bi bi-telephone-fill"></i> </span>
@@ -239,7 +239,80 @@
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book.
         </p>
-        <div class="team--inner"></div>
+        <div class="team--inner">
+          <div class="team--card">
+            <div class="card--img">
+              <img
+                src="./assets/images/team1.png"
+                alt="Our team member image"
+              />
+            </div>
+            <div class="card--text">
+              <p class="team--name">John Doe</p>
+              <span>CEO</span>
+            </div>
+          </div>
+          <div class="team--card">
+            <div class="card--img">
+              <img
+                src="./assets/images/team1.png"
+                alt="Our team member image"
+              />
+            </div>
+            <div class="card--text">
+              <p class="team--name">John Doe</p>
+              <span>CEO</span>
+            </div>
+          </div>
+          <div class="team--card">
+            <div class="card--img">
+              <img
+                src="./assets/images/team1.png"
+                alt="Our team member image"
+              />
+            </div>
+            <div class="card--text">
+              <p class="team--name">John Doe</p>
+              <span>CEO</span>
+            </div>
+          </div>
+          <div class="team--card">
+            <div class="card--img">
+              <img
+                src="./assets/images/team1.png"
+                alt="Our team member image"
+              />
+            </div>
+            <div class="card--text">
+              <p class="team--name">John Doe</p>
+              <span>CEO</span>
+            </div>
+          </div>
+          <div class="team--card">
+            <div class="card--img">
+              <img
+                src="./assets/images/team1.png"
+                alt="Our team member image"
+              />
+            </div>
+            <div class="card--text">
+              <p class="team--name">John Doe</p>
+              <span>CEO</span>
+            </div>
+          </div>
+          <div class="team--card">
+            <div class="card--img">
+              <img
+                src="./assets/images/team1.png"
+                alt="Our team member image"
+              />
+            </div>
+            <div class="card--text">
+              <p class="team--name">John Doe</p>
+              <span>CEO</span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -413,6 +486,28 @@
     <script src="https://www.google-analytics.com/analytics.js" async></script>
     <script>
       const swiper = new Swiper(".swiper-container", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".button-next",
+          prevEl: ".button-prev",
+        },
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+
+      const swiper2 = new Swiper(".about--slider .swiper-container", {
         // Optional parameters
         direction: "horizontal",
         loop: true,

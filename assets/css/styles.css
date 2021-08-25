@@ -684,10 +684,16 @@ footer .footer--inner .footer--social {
   display: -ms-flexbox;
   display: flex;
   list-style: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 footer .footer--inner .footer--social li {
   margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 footer .footer--inner .footer--social li span {
@@ -845,6 +851,10 @@ header .inner .contact {
   position: relative;
 }
 
+.testimonial .container .swiper-container {
+  overflow: hidden;
+}
+
 .testimonial .container .swiper-container .content {
   width: 50%;
   max-width: 719px;
@@ -913,7 +923,7 @@ header .inner .contact {
   right: 0;
 }
 
-.testimonial .container .swiper-container .swiper-custom-btn:active:focus-within {
+.testimonial .container .swiper-container .swiper-custom-btn:focus-within {
   outline: none;
 }
 
@@ -1194,7 +1204,7 @@ header .inner .contact {
 }
 
 .company {
-  padding: 10rem 0 20rem;
+  padding: 9rem 0 18rem;
   background: #f3f2f0;
 }
 
@@ -1213,6 +1223,7 @@ header .inner .contact {
 .company--inner .img--section {
   margin-right: 8rem;
   position: relative;
+  padding: 0 2rem;
 }
 
 .company--inner .img--section .img--wrapp {
@@ -1296,6 +1307,15 @@ header .inner .contact {
   font-size: 1.4rem;
 }
 
+.company--inner .company--about {
+  max-width: 500px;
+}
+
+.company--inner .company--about p {
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+
 .about--slider {
   background: #f3f2f0;
 }
@@ -1325,6 +1345,10 @@ header .inner .contact {
   margin: 0 auto;
   text-align: center;
   font-size: 1.2rem;
+}
+
+.about--slider .swiper-container {
+  overflow: hidden;
 }
 
 .about--slider .swiper-container .swiper-pagination {
@@ -1366,7 +1390,7 @@ header .inner .contact {
   left: unset;
 }
 
-.about--slider .swiper-container .swiper-custom-btn:active:focus-within {
+.about--slider .swiper-container .swiper-custom-btn:focus-within {
   outline: none;
 }
 
@@ -1377,7 +1401,7 @@ header .inner .contact {
 }
 
 .team {
-  padding: 9rem 0;
+  padding: 9rem 0 0rem;
   background: #f3f2f0;
   text-align: center;
 }
@@ -1389,8 +1413,94 @@ header .inner .contact {
   font-size: 1.2rem;
 }
 
-.team .inner {
+.team--inner {
+  padding: 4.5rem 0rem;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 5.4rem;
+  width: 83%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team--inner .team--card:nth-child(5) {
+  -ms-grid-column: 2;
+  grid-column: 2;
+}
+
+.team--inner .team--card .card--img {
+  padding: 0.6rem;
+  border: 1px solid #ce8163;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.team--inner .team--card .card--text {
+  margin-top: 1rem;
+}
+
+.team--inner .team--card .card--text .team--name {
+  font-size: 1.4rem;
+  font-family: "Bodoni Moda", serif;
+}
+
+.service--group {
+  background-color: #f3f2f0;
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.service--group .service--inner .service--card {
+  padding: 6.5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.service--group .service--inner .service--card > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 50%;
+          flex: 1 0 50%;
+}
+
+.service--group .service--inner .service--card .service--image {
+  margin-right: 8rem;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.service--group .service--inner .service--card .service--image .img--wrapp {
+  max-height: 485px;
+  overflow: hidden;
+}
+
+.service--group .service--inner .service--card .service--image .img--wrapp img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.service--group .service--inner .service--card .service--body {
+  max-width: 500px;
+  text-align: left;
+}
+
+.service--group .service--inner .service--card .service--body p {
+  line-height: 3rem;
+  margin-bottom: 2rem;
+}
+
+.service--group .card--reverse .service--image {
+  margin-right: 0 !important;
+  margin-left: 8rem;
+}
+
+.service--group .card--reverse .service--body {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 /*# sourceMappingURL=styles.css.map */
