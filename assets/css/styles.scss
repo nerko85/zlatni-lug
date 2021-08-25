@@ -451,6 +451,12 @@
     .service--card {
       padding: 6.5rem 0;
       display: flex;
+      align-items: center;
+      border-bottom: 1px solid $secoundary;
+
+      &:last-child {
+        border-bottom: none;
+      }
 
       & > * {
         flex: 1 0 50%;
@@ -480,17 +486,60 @@
           margin-bottom: 2rem;
         }
       }
+
+      @media screen and (max-width: $widescreen) {
+        .service--image {
+          margin-right: 2rem;
+          margin-left: 0;
+        }
+        .service--body {
+          max-width: unset;
+        }
+      }
+
+      @media screen and (max-width: $laptop) {
+        flex-wrap: wrap;
+        .service--image {
+          margin-right: 0;
+        }
+        .service--body {
+          padding: 0 2rem;
+          min-width: 500px;
+        }
+      }
     }
   }
 
   .card--reverse {
     .service--image {
-      margin-right: 0 !important;
+      margin-right: 0;
       margin-left: 8rem;
     }
 
     .service--body {
       order: 1;
+    }
+
+    @media screen and (max-width: $widescreen) {
+      .service--image {
+        margin-right: 0;
+        margin-left: 2rem;
+      }
+      .service--body {
+        max-width: unset;
+      }
+    }
+
+    @media screen and (max-width: $laptop) {
+      flex-wrap: wrap;
+      .service--image {
+        margin-right: 0;
+        margin-left: 0;
+      }
+      .service--body {
+        padding: 0 2rem;
+        min-width: 500px;
+      }
     }
   }
 }

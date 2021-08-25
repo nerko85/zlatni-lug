@@ -498,7 +498,7 @@ a.read--more i {
 
 @media (max-width: 768px) {
   .container {
-    width: 481px;
+    width: 560px;
   }
 }
 
@@ -1457,6 +1457,14 @@ header .inner .contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ce8163;
+}
+
+.service--group .service--inner .service--card:last-child {
+  border-bottom: none;
 }
 
 .service--group .service--inner .service--card > * {
@@ -1493,8 +1501,32 @@ header .inner .contact {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 1440px) {
+  .service--group .service--inner .service--card .service--image {
+    margin-right: 2rem;
+    margin-left: 0;
+  }
+  .service--group .service--inner .service--card .service--body {
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .service--group .service--inner .service--card {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .service--group .service--inner .service--card .service--image {
+    margin-right: 0;
+  }
+  .service--group .service--inner .service--card .service--body {
+    padding: 0 2rem;
+    min-width: 500px;
+  }
+}
+
 .service--group .card--reverse .service--image {
-  margin-right: 0 !important;
+  margin-right: 0;
   margin-left: 8rem;
 }
 
@@ -1502,5 +1534,30 @@ header .inner .contact {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+}
+
+@media screen and (max-width: 1440px) {
+  .service--group .card--reverse .service--image {
+    margin-right: 0;
+    margin-left: 2rem;
+  }
+  .service--group .card--reverse .service--body {
+    max-width: unset;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .service--group .card--reverse {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .service--group .card--reverse .service--image {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .service--group .card--reverse .service--body {
+    padding: 0 2rem;
+    min-width: 500px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
