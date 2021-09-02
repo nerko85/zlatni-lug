@@ -116,7 +116,36 @@
 
     <section class="map">
       <div class="container">
-        <div class="map--inner"></div>
+        <div class="map--inner">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+              <iframe
+                id="gmap_canvas"
+                src="https://maps.google.com/maps?q=zlatni%20lug%20bb%20derventa&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0"
+                scrolling="no"
+                marginheight="0"
+                marginwidth="0"
+              ></iframe
+              ><a href="https://www.whatismyip-address.com/divi-discount/"></a
+              ><br /><style>
+                .mapouter {
+                  position: relative;
+                  text-align: right;
+                }</style
+              ><a href="https://www.embedgooglemap.net"
+                >custom map for website</a
+              ><style>
+                .gmap_canvas {
+                  overflow: hidden;
+                  background: none !important;
+                  height: 100%;
+                  width: 100%;
+                }
+              </style>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -126,20 +155,19 @@
           <h2>Pisite nam</h2>
           <form action="./main/contact.php" method="POST">
             <div class="form--group">
-              <input type="text" name="name" />
-              <input type="tel" name="telephone" />
-              <input type="email" name="email" />
+              <input type="text" name="name" placeholder="Vaše ime i prezime" />
+              <input type="tel" name="telephone" placeholder="Broj telefona" />
+              <input type="email" name="email" placeholder="Mail adresa" />
             </div>
             <div class="form--group">
               <textarea
                 name="message"
                 id="message"
-                cols="30"
-                rows="10"
+                placeholder="Vaša poruka"
               ></textarea>
             </div>
             <div class="form--group">
-              <button type="submit">Posalji poruku</button>
+              <button type="submit">POŠALJI PORUKU</button>
             </div>
           </form>
         </div>

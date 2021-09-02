@@ -798,6 +798,10 @@ header .inner ul li a {
   font-size: 1.4rem;
 }
 
+header .inner ul li a:hover {
+  color: #ffcb84;
+}
+
 header .inner .contact {
   position: absolute;
   right: 0;
@@ -1565,6 +1569,7 @@ header .inner .contact {
 }
 
 .details {
+  background: #f3f2f0;
   padding: 8rem 0;
 }
 
@@ -1588,13 +1593,19 @@ header .inner .contact {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  font-family: "Playfair Display";
 }
 
 .details--inner .phone {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   border-right: 1px solid #ce8163;
+  padding-right: 12rem;
+}
+
+.details--inner .address {
+  padding-left: 12rem;
 }
 
 .details--item {
@@ -1625,30 +1636,62 @@ header .inner .contact {
   margin: auto;
 }
 
-.details--item a {
-  color: #ce8163;
-  font-size: 2rem;
+.details--item a,
+.details--item p {
+  font-size: 1.8rem;
+  line-height: 1.5;
   font-family: "Playfair Display";
 }
 
+.details--item a {
+  color: #ce8163;
+  font-size: 2rem;
+}
+
 .map {
+  background: #f3f2f0;
   padding: 2.8rem 0;
 }
 
 .map--inner {
-  width: 95%;
+  width: 90%;
   max-width: 1460px;
   max-height: 541px;
   height: 50vh;
   margin: 0 auto;
-  background: red;
+  background: #b2b2b2;
+  overflow: hidden;
+  position: relative;
+}
+
+.map--inner .mapouter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.map--inner .mapouter #gmap_canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  background: #f3f2f0;
+  padding: 2rem 0 16rem;
 }
 
 .form--inner {
-  width: 95%;
+  width: 90%;
   max-width: 1460px;
   margin: 0 auto;
   text-align: center;
+}
+
+.form--inner h2 {
+  margin-top: 0;
+  padding: 2rem 0;
 }
 
 .form--inner form {
@@ -1656,9 +1699,83 @@ header .inner .contact {
   display: grid;
   -ms-grid-columns: 1fr 2fr;
       grid-template-columns: 1fr 2fr;
-  -ms-grid-rows: 3fr 1fr;
-      grid-template-rows: 3fr 1fr;
+  -ms-grid-rows: 1fr auto;
+      grid-template-rows: 1fr auto;
   grid-gap: 2rem;
+}
+
+.form--inner form input {
+  border: 1px solid #ce8163;
+  padding: 1.9rem;
+  margin: 1rem;
+  font-size: 1.4rem;
+}
+
+.form--inner form input::-webkit-input-placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form input:-ms-input-placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form input::-ms-input-placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form input::placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form input:focus-within {
+  outline: 1px solid #ffcb84;
+}
+
+.form--inner form input:first-child {
+  margin-top: 0;
+}
+
+.form--inner form textarea {
+  border: 1px solid #ce8163;
+  padding: 1.5rem;
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  height: 100%;
+}
+
+.form--inner form textarea::-webkit-input-placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form textarea:-ms-input-placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form textarea::-ms-input-placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form textarea::placeholder {
+  color: #b2b2b2;
+}
+
+.form--inner form textarea:focus-within {
+  outline: 1px solid #ffcb84;
+}
+
+.form--inner form button {
+  border: none;
+  padding: 2rem 6rem;
+  background: #5e2431;
+  color: #e6b59e;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.form--inner form button:hover {
+  color: #ffcb84;
 }
 
 .form--group {
