@@ -804,7 +804,36 @@ header .inner ul li a:hover {
 
 header .inner .contact {
   position: absolute;
-  right: 0;
+  right: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .inner .contact a {
+  font-size: 2rem;
+  font-family: "Playfair Display";
+}
+
+header .inner .contact span {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 1.5rem;
+}
+
+header .inner .contact span i {
+  margin: auto;
+  color: #ffcb84;
+  font-size: 1.2rem;
 }
 
 .hero {
@@ -924,6 +953,12 @@ header .inner .contact {
           transform: translateY(-50%);
   cursor: pointer;
   z-index: 99;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.testimonial .container .swiper-container .swiper-custom-btn:hover {
+  background: #f3dfd7;
 }
 
 .testimonial .container .swiper-container .swiper-custom-btn.button-next {
@@ -1127,7 +1162,7 @@ header .inner .contact {
 .services {
   background-color: #f3f2f0;
   text-align: center;
-  padding: 1rem 0 7rem;
+  padding: 1rem 0 10rem;
   background-image: url("../images/leaf-inverse.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -1139,12 +1174,12 @@ header .inner .contact {
   padding: 3rem 0;
   margin: 0 auto;
   width: 80%;
-  max-width: 1200px;
+  max-width: 1000px;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(200px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  grid-gap: 1rem;
+  grid-gap: 5rem 1rem;
 }
 
 .services--grid .services--item {
@@ -1182,6 +1217,15 @@ header .inner .contact {
 .services--grid .services--item:hover .img--wrapp {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
+}
+
+.services--grid h3 {
+  line-height: 2;
+}
+
+.services a.read--more {
+  display: inline-block;
+  margin: 3rem 0;
 }
 
 .contact {

@@ -65,6 +65,11 @@
         transform: translateY(-50%);
         cursor: pointer;
         z-index: 99;
+        transition: all 0.4s ease;
+
+        &:hover {
+          background: lighten($secoundary, $amount: 30);
+        }
 
         &.button-next {
           right: 0;

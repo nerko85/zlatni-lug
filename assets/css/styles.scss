@@ -154,7 +154,7 @@
 .services {
   background-color: $background;
   text-align: center;
-  padding: 1rem 0 7rem;
+  padding: 1rem 0 10rem;
   background-image: url("../images/leaf-inverse.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -165,10 +165,10 @@
     padding: 3rem 0;
     margin: 0 auto;
     width: 80%;
-    max-width: 1200px;
+    max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 1rem;
+    grid-gap: 5rem 1rem;
 
     .services--item {
       display: flex;
@@ -198,6 +198,15 @@
         }
       }
     }
+
+    h3 {
+      line-height: 2;
+    }
+  }
+
+  a.read--more {
+    display: inline-block;
+    margin: 3rem 0;
   }
 }
 
