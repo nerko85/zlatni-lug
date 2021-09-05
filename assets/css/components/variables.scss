@@ -108,13 +108,19 @@ a {
 
   &.read--more {
     color: $secoundary;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     text-transform: uppercase;
     font-weight: 500;
 
     i {
       margin-left: 0.6rem;
       color: $text;
+      position: relative;
+      display: inline-block;
+    }
+
+    &:hover i {
+      animation: arrow 1s ease infinite;
     }
   }
 }
@@ -276,5 +282,81 @@ a {
   @media screen and (min-width: $widescreen) {
     font-size: 2.5rem;
     line-height: 4rem;
+  }
+}
+
+// ANIMATIONS
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.swiper-container {
+  overflow: hidden;
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 3rem;
+
+    .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid $secoundary;
+      opacity: 1;
+
+      &.swiper-pagination-bullet-active {
+        background: #fff;
+        opacity: 1;
+      }
+    }
+  }
+
+  //custom button
+
+  .swiper-custom-btn {
+    position: absolute;
+    top: 50%;
+    left: 5rem;
+    width: 60px;
+    height: 60px;
+    border: 1px solid $secoundary;
+    border-radius: 50%;
+    display: flex;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 99;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+
+    &:hover {
+      background: lighten($secoundary, $amount: 30);
+    }
+
+    &.button-next {
+      right: 5rem;
+      left: unset;
+    }
+
+    &:focus-within {
+      outline: none;
+    }
+
+    i {
+      margin: auto;
+      color: $secoundary;
+      font-size: 1.5rem;
+    }
   }
 }
