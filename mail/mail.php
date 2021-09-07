@@ -27,6 +27,6 @@ if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['telephon
 		echo "success";
     }
 } else {
-	echo "error"; 
+	echo "error";
 }
 ?>
