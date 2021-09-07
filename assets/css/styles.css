@@ -401,8 +401,8 @@ h3 {
 }
 
 p {
-  font-size: 1.4rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  line-height: 2;
   color: #52575d;
 }
 
@@ -723,6 +723,10 @@ a.read--more:hover i {
   font-size: 1.5rem;
 }
 
+.error {
+  outline: 1px solid red;
+}
+
 footer {
   background: #5e2431;
   display: -webkit-box;
@@ -968,6 +972,7 @@ header .inner .contact span i {
 .hero--inner h1 {
   margin: auto;
   color: #fff;
+  position: relative;
 }
 
 .testimonial {
@@ -1043,7 +1048,8 @@ header .inner .contact span i {
 
 .testimonial .container .swiper-container .swiper-custom-btn {
   position: absolute;
-  top: 50%;
+  bottom: 20%;
+  top: unset;
   width: 60px;
   height: 60px;
   border: 1px solid #ce8163;
@@ -1260,6 +1266,7 @@ header .inner .contact span i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-height: 100vh;
 }
 
 .card--full > * {
@@ -1532,7 +1539,7 @@ header .inner .contact span i {
 .about--slider .swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal,
 .about--slider .swiper-container .swiper-pagination-custom,
 .about--slider .swiper-container .swiper-pagination-fraction {
-  bottom: 40%;
+  bottom: 35%;
 }
 
 .about--slider .img--wrapp {
@@ -1570,9 +1577,9 @@ header .inner .contact span i {
 
 .team p {
   width: 50%;
-  max-width: 546px;
+  max-width: 768px;
   margin: 0 auto;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .team--inner {
@@ -1604,7 +1611,7 @@ header .inner .contact span i {
 }
 
 .team--inner .team--card .card--text .team--name {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-family: "Bodoni Moda", serif;
 }
 
@@ -1931,6 +1938,17 @@ header .inner .contact span i {
 
 .form--inner form button:hover {
   color: #ffcb84;
+}
+
+.form--inner ul {
+  padding-top: 3rem;
+  list-style: none;
+  font-size: 1.4rem;
+}
+
+.form--inner ul li {
+  padding: 0.5rem 0;
+  color: red;
 }
 
 .form--group {

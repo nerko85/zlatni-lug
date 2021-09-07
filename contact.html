@@ -65,7 +65,7 @@
                 ><img src="./assets/images/logo.svg" alt="Zlatni Lug logo"
               /></a>
             </li>
-            <li><a href="./news.html">Novosti</a></li>
+            <li><a href="./404.html">Novosti</a></li>
             <li><a href="./contact.html">Kontakt</a></li>
           </ul>
           <div class="contact">
@@ -170,6 +170,7 @@
               <button type="submit">POŠALJI PORUKU</button>
             </div>
           </form>
+          <ul class="error-messages"></ul>
         </div>
       </div>
     </section>
@@ -218,7 +219,7 @@
         <ul>
           <li><a href="./about.html">O nama</a></li>
           <li><a href="./usluge.html">Usluge</a></li>
-          <li><a href="./news.html">Novosti</a></li>
+          <li><a href="./404.html">Novosti</a></li>
           <li><a href="./cotact.html">Kontakt</a></li>
         </ul>
       </div>
@@ -245,48 +246,52 @@
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
     <script>
-      const swiper = new Swiper(".swiper-container", {
-        // Optional parameters
-        direction: "horizontal",
-        loop: true,
+      const form = document.getElementsByTagName("form")[0];
+      const messages = document.getElementsByClassName("error-messages")[0];
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const formData = {};
+        const errors = [];
+        Array.from(e.currentTarget.elements).forEach((field) => {
+          if (!field.name) return;
+          if (field.value == "undefined" || field.value == "") {
+            field.classList.add("error");
+            let p = document.createElement("p");
+            errors.push(`The field ${field.name} is required`);
+          } else {
+            field.classList.remove("error");
+          }
 
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
+          setTimeout(() => {
+            field.classList.remove("error");
+            messages.textContent = "";
+          }, 4000);
 
-        // Navigation arrows
-        navigation: {
-          nextEl: ".button-next",
-          prevEl: ".button-prev",
-        },
+          formData[field.name] = field.value;
+        });
 
-        // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-      });
+        if (errors.length) {
+          errors.forEach((error) => {
+            const message = document.createElement("li");
+            message.textContent = error;
+            messages.appendChild(message);
+          });
+        } else {
+          fetch("./mail/contact.php", {
+            method: "POST",
+            body: JSON.stringify(formData),
+          })
+            .then((res) => {
+              return res.json();
+            })
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+        }
 
-      const swiper2 = new Swiper(".about--slider .swiper-container", {
-        // Optional parameters
-        direction: "horizontal",
-        loop: true,
-
-        // If we need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
-
-        // Navigation arrows
-        navigation: {
-          nextEl: ".button-next",
-          prevEl: ".button-prev",
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
+        // const name = document.querySelector("input[name='name']");
+        // const phone = document.querySelector("input[name='telephone']");
+        // const email = document.querySelector("input[name='email']");
+        // console.log(name, phone, email);
       });
     </script>
   </body>

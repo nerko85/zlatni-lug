@@ -58,8 +58,8 @@ h3 {
 }
 
 p {
-  font-size: 1.4rem;
-  line-height: 3rem;
+  font-size: 1.6rem;
+  line-height: 2;
   color: #52575d;
 }
 
@@ -378,5 +378,9 @@ a.read--more:hover i {
   margin: auto;
   color: #ce8163;
   font-size: 1.5rem;
+}
+
+.error {
+  outline: 1px solid red;
 }
 /*# sourceMappingURL=variables.css.map */

@@ -62,7 +62,7 @@
                 ><img src="./assets/images/logo.svg" alt="Zlatni Lug logo"
               /></a>
             </li>
-            <li><a href="./news.html">Novosti</a></li>
+            <li><a href="./404.html">Novosti</a></li>
             <li><a href="./contact.html">Kontakt</a></li>
           </ul>
           <div class="contact">
@@ -577,7 +577,7 @@
         <ul>
           <li><a href="./about.html">O nama</a></li>
           <li><a href="./usluge.html">Usluge</a></li>
-          <li><a href="./news.html">Novosti</a></li>
+          <li><a href="./404.html">Novosti</a></li>
           <li><a href="./cotact.html">Kontakt</a></li>
         </ul>
       </div>
@@ -630,6 +630,8 @@
       });
 
       const cards = [...document.querySelectorAll(".card--full")];
+      const services = [...document.querySelectorAll(".services--item")];
+
       let options = {
         root: document.querySelector("#scrollArea"),
         rootMargin: "800px",
@@ -674,6 +676,25 @@
       let observer = new IntersectionObserver(callback, options);
       cards.forEach((card) => {
         observer.observe(card);
+      });
+
+      let observer2 = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          const elements = entry.target;
+          console.log(i);
+          if (entry.isIntersecting) {
+            gsap.from(elements, {
+              duration: 0.45,
+              y: 30,
+              opacity: 0,
+              delay: 0.1 * i,
+            });
+          }
+        });
+      }, options);
+
+      services.forEach((service) => {
+        observer2.observe(service);
       });
     </script>
   </body>

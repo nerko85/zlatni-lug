@@ -144,6 +144,7 @@
 
   &--full {
     display: flex;
+    max-height: 100vh;
 
     & > * {
       flex: 1 0 50%;
@@ -375,7 +376,7 @@
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-      bottom: 40%;
+      bottom: 35%;
     }
   }
 
@@ -411,9 +412,9 @@
 
   p {
     width: 50%;
-    max-width: 546px;
+    max-width: 768px;
     margin: 0 auto;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   &--inner {
@@ -441,7 +442,7 @@
         margin-top: 1rem;
 
         .team--name {
-          font-size: 1.4rem;
+          font-size: 1.6rem;
           font-family: $bodoni;
         }
       }
@@ -714,6 +715,16 @@
         &:hover {
           color: $primary;
         }
+      }
+    }
+
+    ul {
+      padding-top: 3rem;
+      list-style: none;
+      font-size: 1.4rem;
+      li {
+        padding: 0.5rem 0;
+        color: red;
       }
     }
   }

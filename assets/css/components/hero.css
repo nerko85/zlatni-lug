@@ -28,5 +28,6 @@
 .hero--inner h1 {
   margin: auto;
   color: #fff;
+  position: relative;
 }
 /*# sourceMappingURL=hero.css.map */
