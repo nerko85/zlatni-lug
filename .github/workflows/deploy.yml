@@ -17,4 +17,4 @@ jobs:
           server-dir: public_html/
           username: ${{ secrets.FTP_ADMIN }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: out/
+          local-dir: /
