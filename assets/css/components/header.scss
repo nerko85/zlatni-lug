@@ -14,42 +14,57 @@ header {
     max-width: 800px;
     margin: 0 auto;
 
-    ul {
-      display: flex;
-      justify-content: space-evenly;
-      flex: auto;
-      list-style: none;
-      padding: 0;
-      margin: 0;
+    h1.logo--desktop {
+      display: none;
+    }
 
-      li {
-        font-size: 1.8rem;
-        margin-top: 2.6rem;
+    nav {
+      width: 100%;
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex: auto;
+        list-style: none;
+        padding: 0;
+        margin: 0;
 
-        &.logo {
-          margin-top: 0;
-          img {
-            width: 182px;
+        li {
+          font-size: 1.8rem;
+          margin-top: 2.6rem;
+
+          &.logo {
+            margin-top: 0;
+            img {
+              width: 182px;
+            }
+          }
+
+          a {
+            text-transform: uppercase;
+            color: $white;
+            text-decoration: none;
+            font-size: 1.6rem;
+            display: inline-block;
+
+            &:hover {
+              color: $primary;
+            }
           }
         }
+      }
+
+      @media screen and (max-width: $tablet) {
+        display: none;
 
         a {
-          text-transform: uppercase;
-          color: $white;
-          text-decoration: none;
           font-size: 1.4rem;
-          display: inline-block;
-
-          &:hover {
-            color: $primary;
-          }
         }
       }
     }
 
     .contact {
       position: absolute;
-      right: 10rem;
+      right: 5rem;
       display: flex;
       align-items: center;
 
@@ -72,6 +87,24 @@ header {
           color: $primary;
           font-size: 1.2rem;
         }
+      }
+    }
+    @media screen and (min-width: 1400px) {
+      max-width: 1000px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      // justify-content: space-between;
+      h1.logo--desktop {
+        display: inline-block;
+        margin-top: 0;
+        img {
+          width: 182px;
+        }
+      }
+
+      .contact {
+        display: none;
       }
     }
   }

@@ -40,6 +40,12 @@ h1 {
   font-weight: bold;
 }
 
+@media (max-width: 768px) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
 h2 {
   font-size: 4.3rem;
   margin: 2rem 0;
@@ -61,6 +67,12 @@ p {
   font-size: 1.6rem;
   line-height: 2;
   color: #52575d;
+}
+
+@media screen and (max-width: 480px) {
+  p {
+    font-size: 1.4rem;
+  }
 }
 
 a {

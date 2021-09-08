@@ -17,7 +17,7 @@
     .swiper-container {
       overflow: hidden;
       .content {
-        width: 50%;
+        width: 60%;
         max-width: 719px;
         margin: 0 auto;
         display: flex;
@@ -39,7 +39,7 @@
 
         p {
           font-family: $cormorant;
-          font-size: 1.9rem;
+          font-size: 2.2rem;
           color: $secoundary;
           font-style: italic;
           font-weight: 400;
@@ -52,26 +52,29 @@
           font-style: italic;
           font-family: $cormorant;
         }
+
+        @media (max-width: $widescreen) {
+          p {
+            font-size: 1.9rem;
+          }
+        }
+
+        @media (max-width: $tablet) {
+          width: 80%;
+        }
       }
 
       .swiper-custom-btn {
-        position: absolute;
         bottom: 20%;
         top: unset;
-        width: 60px;
-        height: 60px;
-        border: 1px solid $secoundary;
-        border-radius: 50%;
-        display: flex;
-        transform: translateY(-50%);
-        cursor: pointer;
-        z-index: 99;
-        transition: all 0.4s ease;
 
         &:hover {
           background: lighten($secoundary, $amount: 30);
         }
 
+        &.button-prev {
+          left: 0;
+        }
         &.button-next {
           right: 0;
         }
@@ -84,6 +87,17 @@
           margin: auto;
           color: $secoundary;
           font-size: 1.5rem;
+        }
+
+        @media screen and (max-width: $mobile) {
+          top: 30%;
+
+          &.button-prev {
+            left: 5rem;
+          }
+          &.button-next {
+            right: 5rem;
+          }
         }
       }
     }

@@ -54,17 +54,24 @@
     <header>
       <div class="container-fluid">
         <div class="inner">
-          <ul class="navigation">
-            <li><a href="./about.html">O nama</a></li>
-            <li><a href="./services.html">Usluge</a></li>
-            <li class="logo">
-              <a href="/index.html"
-                ><img src="./assets/images/logo.svg" alt="Zlatni Lug logo"
-              /></a>
-            </li>
-            <li><a href="./404.html">Novosti</a></li>
-            <li><a href="./contact.html">Kontakt</a></li>
-          </ul>
+          <h1 class="logo--desktop">
+            <a href="./index.html"
+              ><img src="./assets/images/logo.svg" alt="Zlatni Lug logo"
+            /></a>
+          </h1>
+          <nav>
+            <ul class="navigation">
+              <li><a href="./about.html">O nama</a></li>
+              <li><a href="./services.html">Usluge</a></li>
+              <li class="logo">
+                <a href="/index.html"
+                  ><img src="./assets/images/logo.svg" alt="Zlatni Lug logo"
+                /></a>
+              </li>
+              <li><a href="./404.html">Novosti</a></li>
+              <li><a href="./contact.html">Kontakt</a></li>
+            </ul>
+          </nav>
           <div class="contact">
             <span><i class="bi bi-telephone-fill"></i> </span>
             <a href="tel:+387123321">+387 123 321</a>
@@ -629,9 +636,9 @@
       <div class="footer--nav">
         <ul>
           <li><a href="./about.html">O nama</a></li>
-          <li><a href="./usluge.html">Usluge</a></li>
+          <li><a href="./services.html">Usluge</a></li>
           <li><a href="./404.html">Novosti</a></li>
-          <li><a href="./cotact.html">Kontakt</a></li>
+          <li><a href="./contact.html">Kontakt</a></li>
         </ul>
       </div>
     </footer>
@@ -696,11 +703,11 @@
 
       let options = {
         root: document.querySelector(".card--full")[0],
-        rootMargin: "500px",
+        rootMargin: "700px",
         threshold: 1.0,
       };
 
-      gsap.to(cards, { duration: 0.1, css: { visibility: "visible" } });
+      // gsap.to(cards, { duration: 0.1, css: { visibility: "visible" } });
 
       let callback = (entries) => {
         entries.forEach((entry) => {
@@ -713,25 +720,30 @@
             entry.target.classList.add("animated");
             // var reveal = CSSRulePlugin.getRule(`${cardImg.tagName}:before`);
 
-            tl.from(img, {
-              duration: 0.8,
-              scale: 1.6,
-              ease: "Power2.easeInOut",
-            }).from(
-              elements,
-              {
-                duration: 1,
-                y: 30,
-                opacity: 0,
-                stagger: 0.2,
-                ease: "expo.out",
-                onComplete: function () {
-                  entry.target.classList.add("finished");
-                  console.log("test");
+            tl.to(entry.target, { opacity: 1 })
+              .from(
+                img,
+                {
+                  duration: 0.8,
+                  scale: 1.6,
+                  ease: "Power2.easeInOut",
                 },
-              },
-              "-=1"
-            );
+                "-=.3"
+              )
+              .from(
+                elements,
+                {
+                  duration: 1,
+                  y: 30,
+                  opacity: 0,
+                  stagger: 0.2,
+                  ease: "expo.out",
+                  onComplete: function () {
+                    entry.target.classList.add("finished");
+                  },
+                },
+                "-=1"
+              );
 
             // gsap.from(elements, {
             //   duration: 1,
@@ -776,11 +788,15 @@
         entries.forEach((entry) => {
           const elements = entry.target.children;
           if (entry.isIntersecting) {
+            if (entry.target.classList.contains("finished")) return;
             gsap.from(elements, {
               duration: 0.45,
               y: 30,
               opacity: 0,
               stagger: 0.2,
+              onComplete: function () {
+                entry.target.classList.add("finished");
+              },
             });
           }
         });

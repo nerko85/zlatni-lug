@@ -64,6 +64,29 @@ footer {
         display: flex;
       }
     }
+
+    @media screen and (max-width: $tablet) {
+      flex-wrap: wrap;
+      width: 80%;
+      margin: 0 auto;
+      text-align: center;
+      & > * {
+        flex-basis: 100%;
+        margin-bottom: 3rem;
+        justify-content: center;
+      }
+
+      .footer--logo {
+        order: -1;
+        img {
+          width: 300px;
+        }
+      }
+    }
+
+    ul {
+      margin-bottom: 0;
+    }
   }
 
   .footer--nav {
