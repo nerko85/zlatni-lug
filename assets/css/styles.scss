@@ -876,6 +876,24 @@
       font-size: 2rem;
     }
   }
+
+  @media screen and (max-width: $tablet) {
+    padding: 4rem 0;
+
+    &--inner {
+      flex-direction: column;
+
+      & > * {
+        padding: 2rem 0 !important;
+      }
+
+      .phone {
+        border-right: unset;
+        border-bottom: 1px solid $secoundary;
+        align-items: flex-start;
+      }
+    }
+  }
 }
 
 .map {
@@ -1000,6 +1018,22 @@
       grid-column: 1/-1;
       justify-content: center;
       align-items: center;
+    }
+  }
+
+  @media screen and (max-width: $tablet) {
+    padding: 2rem 0;
+
+    form {
+      grid-template-columns: 1fr;
+
+      input {
+        margin: 1rem 0;
+      }
+
+      textarea {
+        height: 200px;
+      }
     }
   }
 }

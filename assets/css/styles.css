@@ -1125,6 +1125,12 @@ header .inner .contact span i {
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .hero--inner h1 {
+    padding-top: 5rem;
+  }
+}
+
 .testimonial {
   padding: 7rem 0;
   text-align: center;
@@ -2242,6 +2248,28 @@ header .inner .contact span i {
   font-size: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  .details {
+    padding: 4rem 0;
+  }
+  .details--inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .details--inner > * {
+    padding: 2rem 0 !important;
+  }
+  .details--inner .phone {
+    border-right: unset;
+    border-bottom: 1px solid #ce8163;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .map {
   background: #f3f2f0;
   padding: 2.8rem 0;
@@ -2407,6 +2435,22 @@ header .inner .contact span i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    padding: 2rem 0;
+  }
+  .form form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .form form input {
+    margin: 1rem 0;
+  }
+  .form form textarea {
+    height: 200px;
+  }
 }
 
 .animated .card--img::before {
