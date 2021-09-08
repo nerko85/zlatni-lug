@@ -79,7 +79,7 @@ footer {
       .footer--logo {
         order: -1;
         img {
-          width: 300px;
+          width: 220px;
         }
       }
     }
@@ -109,6 +109,10 @@ footer {
           color: $primary;
         }
       }
+    }
+
+    @media screen and (max-width: 320px) {
+      display: none;
     }
   }
 }

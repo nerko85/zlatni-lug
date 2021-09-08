@@ -46,11 +46,23 @@ h1 {
   }
 }
 
+@media (max-width: 320px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
 h2 {
   font-size: 4.3rem;
   margin: 2rem 0;
   color: #52575d;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 3.5rem;
+  }
 }
 
 h3 {

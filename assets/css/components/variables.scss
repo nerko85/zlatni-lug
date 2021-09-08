@@ -80,6 +80,9 @@ h1 {
   @media (max-width: $tablet) {
     font-size: 5rem;
   }
+  @media (max-width: 320px) {
+    font-size: 4rem;
+  }
 }
 
 h2 {
@@ -87,6 +90,10 @@ h2 {
   margin: 2rem 0;
   color: $text;
   font-weight: 600;
+
+  @media (max-width: $tablet) {
+    font-size: 3.5rem;
+  }
 }
 
 h3 {

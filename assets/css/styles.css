@@ -389,11 +389,23 @@ h1 {
   }
 }
 
+@media (max-width: 320px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
 h2 {
   font-size: 4.3rem;
   margin: 2rem 0;
   color: #52575d;
   font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 3.5rem;
+  }
 }
 
 h3 {
@@ -903,7 +915,7 @@ footer .footer--inner .footer--social li {
             order: -1;
   }
   footer .footer--inner .footer--logo img {
-    width: 300px;
+    width: 220px;
   }
 }
 
@@ -934,6 +946,12 @@ footer .footer--nav ul li a {
 
 footer .footer--nav ul li:hover a {
   color: #ffcb84;
+}
+
+@media screen and (max-width: 320px) {
+  footer .footer--nav {
+    display: none;
+  }
 }
 
 header {
@@ -1343,6 +1361,18 @@ header .inner .contact span i {
           transform: scale(1.2);
 }
 
+@media screen and (max-width: 480px) {
+  .cover--video {
+    bottom: 70px;
+  }
+  .cover--inner .sub--heading {
+    margin-bottom: 2rem;
+  }
+  .cover--inner .sub--heading a {
+    font-size: 1.8rem;
+  }
+}
+
 #about {
   background: #f3f2f0;
   margin-bottom: -2rem;
@@ -1437,6 +1467,10 @@ header .inner .contact span i {
 
 .card--full .card--img img {
   min-height: 700px;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .card--full .card--body {
@@ -1469,6 +1503,35 @@ header .inner .contact span i {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .card--small {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .card--small > * {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .card--small .card--img {
+    height: 300px;
+  }
+  .card--full {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    max-height: unset;
+  }
+  .card--full > * {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  .card--full .card--img {
+    height: 400px;
+  }
+  .card--full .card--body .body--inner {
+    padding: 3rem 3rem 5rem;
+  }
 }
 
 .services {
@@ -1540,6 +1603,29 @@ header .inner .contact span i {
   margin: 3rem 0;
 }
 
+@media screen and (max-width: 768px) {
+  .services--grid {
+    -ms-grid-columns: (minmax(150px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 3rem 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .services--grid {
+    -ms-grid-columns: (minmax(130px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .services--grid {
+    -ms-grid-columns: (minmax(115px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(115px, 1fr));
+  }
+}
+
 .contact {
   padding: 1rem;
 }
@@ -1586,6 +1672,13 @@ header .inner .contact span i {
   }
 }
 
+@media screen and (max-width: 320px) {
+  .instagram--inner {
+    -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
 .instagram--feed {
   height: 350px;
   max-height: 450px;
@@ -1596,6 +1689,12 @@ header .inner .contact span i {
 @media (min-width: 1440px) {
   .instagram--feed {
     height: 400px;
+  }
+}
+
+@media (min-width: 320px) {
+  .instagram--feed {
+    height: 300px;
   }
 }
 
