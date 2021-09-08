@@ -255,11 +255,16 @@
     <script>
       const form = document.getElementsByTagName("form")[0];
       const messages = document.getElementsByClassName("error-messages")[0];
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
         const formData = {};
-        const errors = [];
+        let errors = [];
         Array.from(e.currentTarget.elements).forEach((field) => {
+          field.addEventListener("focus", () => {
+            messages.textContent = "";
+            errors = [];
+          });
           if (!field.name) return;
           if (field.value == "undefined" || field.value == "") {
             field.classList.add("error");
@@ -291,7 +296,7 @@
             .then((res) => {
               return res.json();
             })
-            .then((res) => console.log(res))
+            .then((res) => form.reset())
             .catch((err) => console.log(err));
         }
 
