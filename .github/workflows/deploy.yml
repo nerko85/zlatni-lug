@@ -1,14 +1,23 @@
 name: Deploy
-
+          
 on:
   push:
     branches: [ master, main ]
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
+      - name: Get the latest code
+        uses: actions/checkout@v2.3.2
+      - uses: actions/setup-node@master
+      
+      - name: git status
+        run: git status -uno --porcelain
+        
+      - name: git reset
+        run: git reset --hard
         
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -17,4 +26,4 @@ jobs:
           server-dir: /domains/forgeit.qa/public_html/lug/
           username: ${{ secrets.FTP_ADMIN }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: /
+          local-dir: ./
