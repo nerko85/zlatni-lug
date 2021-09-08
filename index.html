@@ -533,6 +533,59 @@
       </div>
     </section>
 
+    <section class="instagram">
+      <div class="instagram--inner">
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/personal-care-bg.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/activities-bg.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/personal-care-bg.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/happy-senior-gardening.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/senior-woman-in-wheelchair.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/food-bg.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/accomodation-bg.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+        <div class="instagram--feed">
+          <a href="http://instagram.com">
+            <img src="./assets//images/senior-woman-in-wheelchair.png" alt="" />
+            <span class="overlay"> <i class="fab fa-instagram"></i> </span
+          ></a>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <div class="container">
         <div class="footer--inner">
@@ -584,8 +637,12 @@
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/CSSRulePlugin.min.js"
+      crossorigin="anonymous"
+    ></script>
+
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 
@@ -606,11 +663,11 @@
       const swiper = new Swiper(".swiper-container", {
         // Optional parameters
         direction: "horizontal",
-        loop: true,
+        /* loop: true,
         autoplay: {
           delay: 4000,
           disableOnInteraction: false,
-        },
+        }, */
 
         // If we need pagination
         pagination: {
@@ -629,28 +686,65 @@
         },
       });
 
+      console.log(CSSRulePlugin.getRule(".card--img:before"));
+
       const cards = [...document.querySelectorAll(".card--full")];
       const services = [...document.querySelectorAll(".services--item")];
+      const service = document.getElementsByClassName("services--grid")[0];
+
+      const tl = gsap.timeline({ immediateRender: false });
 
       let options = {
-        root: document.querySelector("#scrollArea"),
-        rootMargin: "800px",
+        root: document.querySelector(".card--full")[0],
+        rootMargin: "500px",
         threshold: 1.0,
       };
+
+      gsap.to(cards, { duration: 0.1, css: { visibility: "visible" } });
 
       let callback = (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const elements = entry.target.childNodes[3].children[0].children;
+            const cardImg = entry.target.children[0];
+            const img = cardImg.querySelector("img");
 
-            gsap.from(elements, {
-              duration: 1,
-              y: 30,
-              opacity: 0,
-              stagger: 0.2,
-              ease: "expo.out",
-              delay: 0.3,
-            });
+            if (entry.target.classList.contains("finished")) return;
+            entry.target.classList.add("animated");
+            // var reveal = CSSRulePlugin.getRule(`${cardImg.tagName}:before`);
+
+            tl.from(img, {
+              duration: 0.8,
+              scale: 1.6,
+              ease: "Power2.easeInOut",
+            }).from(
+              elements,
+              {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                stagger: 0.2,
+                ease: "expo.out",
+                onComplete: function () {
+                  entry.target.classList.add("finished");
+                  console.log("test");
+                },
+              },
+              "-=1"
+            );
+
+            // gsap.from(elements, {
+            //   duration: 1,
+            //   y: 30,
+            //   opacity: 0,
+            //   stagger: 0.2,
+            //   ease: "expo.out",
+            //   delay: 0.3,
+            //   onComplete: function () {
+            //     entry.target.classList.add("finished");
+            //     console.log("test");
+            //   },
+            // });
 
             // gsap.from(`h2`, { duration: 0.5, y: 50, opacity: 0, delay: 0.3 });
             // gsap.from("p", { duration: 0.5, y: 30, opacity: 0, delay: 0.8 });
@@ -678,24 +772,21 @@
         observer.observe(card);
       });
 
-      let observer2 = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          const elements = entry.target;
-          console.log(i);
+      let obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const elements = entry.target.children;
           if (entry.isIntersecting) {
             gsap.from(elements, {
               duration: 0.45,
               y: 30,
               opacity: 0,
-              delay: 0.1 * i,
+              stagger: 0.2,
             });
           }
         });
       }, options);
 
-      services.forEach((service) => {
-        observer2.observe(service);
-      });
+      obs.observe(service);
     </script>
   </body>
 </html>

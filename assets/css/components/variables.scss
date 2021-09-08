@@ -285,22 +285,6 @@ a {
   }
 }
 
-// ANIMATIONS
-
-@keyframes arrow {
-  0% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(5px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
 .swiper-container {
   overflow: hidden;
   .swiper-horizontal > .swiper-pagination-bullets,
@@ -363,4 +347,40 @@ a {
 
 .error {
   outline: 1px solid red;
+}
+
+// ANIMATIONS
+
+@keyframes arrow {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    width: 100%;
+    transform-origin: left;
+  }
+  100% {
+    width: 0%;
+    transform-origin: right;
+  }
+}
+
+@keyframes test {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

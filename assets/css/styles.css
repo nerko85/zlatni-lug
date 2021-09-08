@@ -624,36 +624,6 @@ a.read--more:hover i {
   }
 }
 
-@-webkit-keyframes arrow {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  50% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes arrow {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  50% {
-    -webkit-transform: translateX(5px);
-            transform: translateX(5px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
 .swiper-container {
   overflow: hidden;
 }
@@ -725,6 +695,84 @@ a.read--more:hover i {
 
 .error {
   outline: 1px solid red;
+}
+
+@-webkit-keyframes arrow {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes arrow {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+    width: 100%;
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  100% {
+    width: 0%;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+}
+
+@keyframes scale {
+  0% {
+    width: 100%;
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  100% {
+    width: 0%;
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+}
+
+@-webkit-keyframes test {
+  0% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes test {
+  0% {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
 }
 
 footer {
@@ -1267,6 +1315,7 @@ header .inner .contact span i {
   display: -ms-flexbox;
   display: flex;
   max-height: 100vh;
+  visibility: hidden;
 }
 
 .card--full > * {
@@ -1277,6 +1326,17 @@ header .inner .contact span i {
 
 .card--full .card--img {
   position: relative;
+}
+
+.card--full .card--img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 999;
 }
 
 .card--full .card--img > * {
@@ -1412,6 +1472,65 @@ header .inner .contact span i {
   color: #808080;
   font-size: 1.4rem;
   text-transform: uppercase;
+}
+
+.instagram--inner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+@media (min-width: 1400px) {
+  .instagram--inner {
+    -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+}
+
+.instagram--feed {
+  height: 350px;
+  max-height: 450px;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 1400px) {
+  .instagram--feed {
+    height: 400px;
+  }
+}
+
+.instagram--feed img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.instagram--feed .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: rgba(94, 36, 49, 0.8);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+.instagram--feed .overlay i {
+  margin: auto;
+  font-size: 5rem;
+  color: #ffcb84;
+}
+
+.instagram--feed:hover .overlay {
+  opacity: 1;
 }
 
 .company {
@@ -1975,5 +2094,12 @@ header .inner .contact span i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.animated .card--img::before {
+  -webkit-animation: scale 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+          animation: scale 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 /*# sourceMappingURL=styles.css.map */
