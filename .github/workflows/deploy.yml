@@ -23,7 +23,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
           server: ftp://185.224.137.142
-          server-dir: domains/forgeit.qa/public_html/lug/
+          server-dir: /home/u878187079/domains/forgeit.qa/lug/
           username: ${{ secrets.FTP_ADMIN }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./
