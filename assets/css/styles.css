@@ -1039,6 +1039,10 @@ header .inner nav ul li a:hover {
   }
 }
 
+header .inner .hamb-menu {
+  display: none;
+}
+
 header .inner .contact {
   position: absolute;
   right: 5rem;
@@ -1089,6 +1093,15 @@ header .inner .contact span i {
   }
   header .inner .contact {
     display: none;
+  }
+  header .inner .hamb-menu {
+    position: absolute;
+    display: inline-block;
+    z-index: 999;
+    font-size: 4rem;
+    color: #ffcb84;
+    right: 3rem;
+    cursor: pointer;
   }
 }
 
