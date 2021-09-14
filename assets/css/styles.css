@@ -1035,6 +1035,10 @@ header .inner nav ul li a:hover {
   color: #ffcb84;
 }
 
+header .inner nav ul li:last-child {
+  display: none;
+}
+
 @media screen and (max-width: 768px) {
   header .inner nav {
     width: 0;
@@ -1066,6 +1070,37 @@ header .inner nav ul li a:hover {
     color: #fff;
     font-size: 3rem;
     line-height: 5rem;
+  }
+  header .inner nav ul li:last-child {
+    display: inline-block;
+    position: absolute;
+    bottom: 5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .inner nav ul li:last-child a {
+    font-size: 2.5rem;
+    font-family: "Playfair Display";
+  }
+  header .inner nav ul li:last-child span {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-right: 1.5rem;
+  }
+  header .inner nav ul li:last-child span i {
+    margin: auto;
+    color: #ffcb84;
+    font-size: 1.2rem;
   }
   header .inner nav a {
     font-size: 1.4rem;

@@ -2,9 +2,19 @@ const nav = document.querySelector("header nav");
 const items = Array.from(nav.querySelectorAll("li"));
 const hamb = document.querySelector(".hamb-menu");
 
-const tl2 = gsap.timeline({ paused: true });
+checkWidth();
 
-gsap.to(items, { duration: 0, opacity: 0, y: 50 });
+function checkWidth() {
+  if (window.innerWidth < 768) {
+    gsap.to(items, { duration: 0, opacity: 0, y: 50 });
+  } else {
+    gsap.to(items, { duration: 0, opacity: 1, y: 0 });
+  }
+}
+
+window.addEventListener("resize", checkWidth);
+
+const tl2 = gsap.timeline({ paused: true });
 tl2
   .to(nav, {
     duration: 1,
