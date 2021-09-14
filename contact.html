@@ -49,8 +49,6 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-
-    <meta name="theme-color" content="#FF00FF" />
   </head>
 
   <body>
@@ -129,38 +127,7 @@
     </section>
 
     <section class="map">
-      <div class="container">
-        <div class="map--inner">
-          <div class="mapouter">
-            <div class="gmap_canvas">
-              <iframe
-                id="gmap_canvas"
-                src="https://maps.google.com/maps?q=zlatni%20lug%20bb%20derventa&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                frameborder="0"
-                scrolling="no"
-                marginheight="0"
-                marginwidth="0"
-              ></iframe
-              ><a href="https://www.whatismyip-address.com/divi-discount/"></a
-              ><br /><style>
-                .mapouter {
-                  position: relative;
-                  text-align: right;
-                }</style
-              ><a href="https://www.embedgooglemap.net"
-                >custom map for website</a
-              ><style>
-                .gmap_canvas {
-                  overflow: hidden;
-                  background: none !important;
-                  height: 100%;
-                  width: 100%;
-                }
-              </style>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="map--inner" id="map"></div>
     </section>
 
     <section class="form">
@@ -246,6 +213,11 @@
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiyFdtW0fp-r6ifTdPSCh7cQvb0YECYGI&callback=initMap"
+    ></script>
+
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
       window.ga = function () {
@@ -259,7 +231,268 @@
       ga("send", "pageview");
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
+
     <script>
+      // GOOGLE MAP
+
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 44.9876582, lng: 17.8778102 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 12,
+          center: uluru,
+        });
+
+        const image = "http://zlatnilug.forgeit.qa/assets/images/mapIcon.png";
+
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map,
+          icon: image,
+          mapTypeControl: false,
+        });
+
+        const styles = {
+          default: [],
+          hide: [
+            {
+              featureType: "all",
+              elementType: "labels.text.fill",
+              stylers: [
+                {
+                  saturation: 36,
+                },
+                {
+                  color: "#333333",
+                },
+                {
+                  lightness: 40,
+                },
+              ],
+            },
+            {
+              featureType: "all",
+              elementType: "labels.text.stroke",
+              stylers: [
+                {
+                  visibility: "on",
+                },
+                {
+                  color: "#ffffff",
+                },
+                {
+                  lightness: 16,
+                },
+              ],
+            },
+            {
+              featureType: "all",
+              elementType: "labels.icon",
+              stylers: [
+                {
+                  visibility: "off",
+                },
+              ],
+            },
+            {
+              featureType: "administrative",
+              elementType: "geometry.fill",
+              stylers: [
+                {
+                  color: "#fefefe",
+                },
+                {
+                  lightness: 20,
+                },
+              ],
+            },
+            {
+              featureType: "administrative",
+              elementType: "geometry.stroke",
+              stylers: [
+                {
+                  color: "#fefefe",
+                },
+                {
+                  lightness: 17,
+                },
+                {
+                  weight: 1.2,
+                },
+              ],
+            },
+            {
+              featureType: "administrative.locality",
+              elementType: "labels.icon",
+              stylers: [
+                {
+                  saturation: "20",
+                },
+              ],
+            },
+            {
+              featureType: "landscape",
+              elementType: "geometry",
+              stylers: [
+                {
+                  visibility: "on",
+                },
+                {
+                  hue: "#ff3c00",
+                },
+                {
+                  saturation: "22",
+                },
+                {
+                  lightness: "0",
+                },
+              ],
+            },
+            {
+              featureType: "landscape",
+              elementType: "geometry.fill",
+              stylers: [
+                {
+                  visibility: "on",
+                },
+                {
+                  hue: "#ff6300",
+                },
+              ],
+            },
+            {
+              featureType: "landscape",
+              elementType: "labels.text.fill",
+              stylers: [
+                {
+                  hue: "#ff0000",
+                },
+              ],
+            },
+            {
+              featureType: "poi",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#f5f5f5",
+                },
+                {
+                  lightness: 21,
+                },
+              ],
+            },
+            {
+              featureType: "poi.park",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#dedede",
+                },
+                {
+                  lightness: 21,
+                },
+              ],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "geometry.fill",
+              stylers: [
+                {
+                  color: "#ffffff",
+                },
+                {
+                  lightness: 17,
+                },
+              ],
+            },
+            {
+              featureType: "road.highway",
+              elementType: "geometry.stroke",
+              stylers: [
+                {
+                  color: "#ffffff",
+                },
+                {
+                  lightness: 29,
+                },
+                {
+                  weight: 0.2,
+                },
+              ],
+            },
+            {
+              featureType: "road",
+              elementType: "labels",
+              stylers: [
+                {
+                  hue: "#c79c60",
+                },
+                {
+                  saturation: -93,
+                },
+                {
+                  lightness: 31,
+                },
+                {
+                  visibility: "on",
+                },
+              ],
+            },
+            {
+              featureType: "road.arterial",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#ffffff",
+                },
+                {
+                  lightness: 18,
+                },
+              ],
+            },
+            {
+              featureType: "road.local",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#ffffff",
+                },
+                {
+                  lightness: 16,
+                },
+              ],
+            },
+            {
+              featureType: "transit",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#f2f2f2",
+                },
+                {
+                  lightness: 19,
+                },
+              ],
+            },
+            {
+              featureType: "water",
+              elementType: "geometry",
+              stylers: [
+                {
+                  color: "#e9e9e9",
+                },
+                {
+                  lightness: 17,
+                },
+              ],
+            },
+          ],
+        };
+
+        map.setOptions({ styles: styles["hide"] });
+      }
+
       const form = document.getElementsByTagName("form")[0];
       const messages = document.getElementsByClassName("error-messages")[0];
 
