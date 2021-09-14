@@ -12,7 +12,7 @@ const hamb = document.querySelector(".hamb-menu");
 //   }
 // }
 
-window.addEventListener("resize", checkWidth);
+// window.addEventListener("resize", checkWidth);
 
 if (window.innerWidth <= 768) {
   gsap.to(items, { duration: 0, opacity: 0, y: 50 });

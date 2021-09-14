@@ -14,21 +14,31 @@
     <link rel="stylesheet" href="/assets/css/styles.css" />
     <!-- <link rel="stylesheet" href="/assets/css/print.css" media="print"> -->
 
-    <meta name="description" content="Page description" />
+    <meta
+      name="description"
+      content="Dom za starija lica „Zlatni Lug“ predstavlja  najbolji  vid institucionalnog smještaja starijih osoba te osoba kojima je potrebna pomoć trećeg lica,  koji pruža adekvatan medicinski nadzor, zaštitu i bezbjednost."
+    />
     <meta property="og:title" content="Zlatni Lug - Dom za stara lica" />
-    <meta property="og:description" content="Page description" />
-    <meta property="og:image" content="https://www.mywebsite.com/image.jpg" />
+    <meta
+      property="og:description"
+      content="Dom za starija lica „Zlatni Lug“ predstavlja  najbolji  vid institucionalnog smještaja starijih osoba te osoba kojima je potrebna pomoć trećeg lica,  koji pruža adekvatan medicinski nadzor, zaštitu i bezbjednost."
+    />
+    <meta
+      property="og:image"
+      content="https://www.zlatnilug.ba/images/image.jpg"
+    />
     <meta property="og:image:alt" content="Image description" />
     <meta property="og:locale" content="en_GB" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta property="og:url" content="https://www.mywebsite.com/page" />
-    <link rel="canonical" href="https://www.mywebsite.com/page" />
+    <meta property="og:url" content="https://www.zlatnilug.ba/" />
+    <link rel="canonical" href="https://www.zlatnilug.ba/" />
 
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
@@ -45,6 +55,13 @@
     <link
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/css/lightbox.min.css"
+      integrity="sha512-q+YJl7Rp5Ma9Z3/QPTCtiQn91kWNlmxoQIbh3lq/EA0k1C7yMGz8wGnh/OBgDryDvi+FZr9icvcCDQ1TsMJOPQ=="
+      crossorigin="anonymous"
     />
 
     <meta name="theme-color" content="#FF00FF" />
@@ -228,22 +245,39 @@
             <div class="swiper-wrapper">
               <!-- Slides -->
               <div class="swiper-slide">
-                <img
-                  src="./assets/images/activities-bg.png"
-                  alt="Women in a wheelchair"
-                />
+                <a
+                  href="./assets/images/activities-bg.png"
+                  data-lightbox="roadtrip"
+                >
+                  <img
+                    src="./assets/images/activities-bg.png"
+                    alt="Women in a wheelchair"
+                  />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="./assets/images/activities-bg.png"
-                  alt="Women in a wheelchair"
-                />
+                <a
+                  href="./assets/images/activities-bg.png"
+                  data-lightbox="roadtrip"
+                >
+                  <img
+                    src="./assets/images/activities-bg.png"
+                    alt="Women in a wheelchair"
+                    data-lightbox="roadtrip"
+                  />
+                </a>
               </div>
               <div class="swiper-slide">
-                <img
-                  src="./assets/images/activities-bg.png"
-                  alt="Women in a wheelchair"
-                />
+                <a
+                  href="./assets/images/activities-bg.png"
+                  data-lightbox="roadtrip"
+                >
+                  <img
+                    src="./assets/images/activities-bg.png"
+                    alt="Women in a wheelchair"
+                    data-lightbox="roadtrip"
+                  />
+                </a>
               </div>
             </div>
             <!-- If we need pagination -->
@@ -269,7 +303,10 @@
               type and scrambled it to make a type specimen book. Lorem Ipsum is
               simply dummy text of the printing and typesetting.
             </p>
-            <a class="read--more" href="about"
+            <a
+              class="read--more"
+              href="./assets/images/activities-bg.png"
+              data-lightbox="roadtrip"
               >Pogledajte galeriju <i class="bi bi-arrow-right"></i
             ></a>
           </div>
@@ -657,6 +694,18 @@
       crossorigin="anonymous"
     ></script>
 
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+      integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.9.0/js/lightbox.min.js"
+      integrity="sha512-ht05o05MNZyoqnOq62vJ74WU6vRezwbcDUhVTD/xZ4rO3JRm+YzRYgcylNTGgD/fyVvdwNh8uXp488B2ZdYKzQ=="
+      crossorigin="anonymous"
+    ></script>
+
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 
@@ -699,8 +748,6 @@
           el: ".swiper-scrollbar",
         },
       });
-
-      console.log(CSSRulePlugin.getRule(".card--img:before"));
 
       const cards = [...document.querySelectorAll(".card--full")];
       const services = [...document.querySelectorAll(".services--item")];
