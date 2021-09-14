@@ -54,7 +54,30 @@ header {
       }
 
       @media screen and (max-width: $tablet) {
-        display: none;
+        width: 0;
+        background: $red;
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        display: flex;
+        transform-origin: 50% 0%;
+
+        ul {
+          flex-direction: column;
+          margin: auto;
+          align-items: center;
+
+          & > li.logo {
+            display: none;
+          }
+
+          & li a {
+            color: #fff;
+            font-size: 3rem;
+            line-height: 5rem;
+          }
+        }
 
         a {
           font-size: 1.4rem;
@@ -102,6 +125,7 @@ header {
       h1.logo--desktop {
         display: inline-block;
         margin-top: 0;
+        z-index: 99999;
         img {
           width: 182px;
         }
@@ -119,6 +143,10 @@ header {
         color: $primary;
         right: 3rem;
         cursor: pointer;
+      }
+
+      .active .hamb-menu {
+        filter: invert(1);
       }
     }
   }

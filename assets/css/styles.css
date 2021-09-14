@@ -366,6 +366,11 @@ body {
   min-height: 100vh;
 }
 
+html.open,
+body.open {
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3 {
@@ -1032,7 +1037,35 @@ header .inner nav ul li a:hover {
 
 @media screen and (max-width: 768px) {
   header .inner nav {
+    width: 0;
+    background: #5e2431;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+  }
+  header .inner nav ul {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .inner nav ul > li.logo {
     display: none;
+  }
+  header .inner nav ul li a {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 5rem;
   }
   header .inner nav a {
     font-size: 1.4rem;
@@ -1087,6 +1120,7 @@ header .inner .contact span i {
   header .inner h1.logo--desktop {
     display: inline-block;
     margin-top: 0;
+    z-index: 99999;
   }
   header .inner h1.logo--desktop img {
     width: 182px;
@@ -1102,6 +1136,10 @@ header .inner .contact span i {
     color: #ffcb84;
     right: 3rem;
     cursor: pointer;
+  }
+  header .inner .active .hamb-menu {
+    -webkit-filter: invert(1);
+            filter: invert(1);
   }
 }
 

@@ -23,6 +23,11 @@ body {
   min-height: 100vh;
 }
 
+html.open,
+body.open {
+  overflow: hidden;
+}
+
 h1,
 h2,
 h3 {
