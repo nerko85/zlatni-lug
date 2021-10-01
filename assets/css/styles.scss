@@ -10,7 +10,7 @@
   width: 100%;
   position: relative;
   display: flex;
-  background: url("../images/happy-senior-gardening.png") no-repeat center;
+  background: url("../images/main-hero-bg.jpg") no-repeat center;
 
   &::after {
     content: "";
@@ -266,7 +266,7 @@
   &--grid {
     padding: 3rem 0;
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
     max-width: 1000px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

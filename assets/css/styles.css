@@ -1179,7 +1179,7 @@ header .inner .contact span i {
 }
 
 .hero {
-  background: url("../images/happy-senior-gardening.png") no-repeat center;
+  background: url("../images/main-hero-bg.jpg") no-repeat center;
   background-size: cover;
   position: relative;
 }
@@ -1209,6 +1209,7 @@ header .inner .contact span i {
   margin: auto;
   color: #fff;
   position: relative;
+  padding-top: 5rem;
 }
 
 @media screen and (max-width: 768px) {
@@ -1346,7 +1347,7 @@ header .inner .contact span i {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url("../images/happy-senior-gardening.png") no-repeat center;
+  background: url("../images/main-hero-bg.jpg") no-repeat center;
 }
 
 .cover::after {
@@ -1646,7 +1647,7 @@ header .inner .contact span i {
 .services--grid {
   padding: 3rem 0;
   margin: 0 auto;
-  width: 80%;
+  width: 60%;
   max-width: 1000px;
   display: -ms-grid;
   display: grid;
