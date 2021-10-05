@@ -2030,6 +2030,7 @@ header .inner .contact span i {
 @media screen and (max-width: 480px) {
   .about--slider .swiper-container {
     overflow: hidden;
+    position: relative;
   }
   .about--slider .swiper-container .swiper-horizontal > .swiper-pagination-bullets,
   .about--slider .swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal,

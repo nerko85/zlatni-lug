@@ -177,7 +177,7 @@
                 <div class="content">
                   <div class="img--wrapp">
                     <img
-                      src="./assets/images/about-company-img.jpg"
+                      src="./assets/images/about-company-2.jpg"
                       alt="Home for elders image"
                     />
                   </div>
@@ -187,7 +187,17 @@
                 <div class="content">
                   <div class="img--wrapp">
                     <img
-                      src="./assets/images/about-company-img.jpg"
+                      src="./assets/images/about-company-3.jpg"
+                      alt="Home for elders image"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="content">
+                  <div class="img--wrapp">
+                    <img
+                      src="./assets/images/about-company-4.jpg"
                       alt="Home for elders image"
                     />
                   </div>
@@ -482,10 +492,14 @@
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
     <script>
-      const swiper = new Swiper(".swiper-container", {
+      const swiper = new Swiper(".testimonial .swiper-container", {
         // Optional parameters
         direction: "horizontal",
         loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
 
         // If we need pagination
         pagination: {
@@ -508,6 +522,10 @@
         // Optional parameters
         direction: "horizontal",
         loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
 
         // If we need pagination
         pagination: {

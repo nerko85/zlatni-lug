@@ -592,6 +592,7 @@
   @media screen and (max-width: $mobile) {
     .swiper-container {
       overflow: hidden;
+      position: relative;
       .swiper-horizontal > .swiper-pagination-bullets,
       .swiper-pagination-bullets.swiper-pagination-horizontal,
       .swiper-pagination-custom,
