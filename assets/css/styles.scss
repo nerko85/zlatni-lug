@@ -11,6 +11,7 @@
   position: relative;
   display: flex;
   background: url("../images/main-hero-bg.jpg") no-repeat center;
+  background-size: cover;
 
   &::after {
     content: "";
