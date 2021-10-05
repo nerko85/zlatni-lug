@@ -104,6 +104,7 @@ a.read--more {
   font-size: 1.7rem;
   text-transform: uppercase;
   font-weight: 500;
+  cursor: pointer;
 }
 
 a.read--more i {

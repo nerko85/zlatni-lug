@@ -447,6 +447,7 @@ a.read--more {
   font-size: 1.7rem;
   text-transform: uppercase;
   font-weight: 500;
+  cursor: pointer;
 }
 
 a.read--more i {
@@ -1441,7 +1442,20 @@ header .inner .contact span i {
   text-transform: uppercase;
 }
 
-.cover--video span {
+.cover--video a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cover--video a span {
   width: 44px;
   height: 44px;
   display: -webkit-box;
@@ -1453,7 +1467,7 @@ header .inner .contact span i {
   cursor: pointer;
 }
 
-.cover--video span i {
+.cover--video a span i {
   margin: auto;
   color: #ffcb84;
   -webkit-transition: -webkit-transform 0.45s ease;
@@ -1462,7 +1476,7 @@ header .inner .contact span i {
   transition: transform 0.45s ease, -webkit-transform 0.45s ease;
 }
 
-.cover--video span:hover i {
+.cover--video a span:hover i {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
 }
@@ -2336,10 +2350,22 @@ header .inner .contact span i {
   display: -ms-flexbox;
   display: flex;
   margin-right: 1.5rem;
+  -webkit-transition: all 0.4s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: all 0.4s cubic-bezier(0.85, 0, 0.15, 1);
 }
 
 .details--item span i {
   margin: auto;
+  -webkit-transition: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+  transition: all 0.3s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.details--item span:hover {
+  background: #ce8163;
+}
+
+.details--item span:hover i {
+  color: #fff;
 }
 
 .details--item a,
