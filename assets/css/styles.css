@@ -959,6 +959,12 @@ footer .footer--nav ul li:hover a {
   color: #ffcb84;
 }
 
+@media screen and (max-width: 580px) {
+  footer .footer--nav ul li a {
+    padding: 0 1rem;
+  }
+}
+
 @media screen and (max-width: 320px) {
   footer .footer--nav {
     display: none;
