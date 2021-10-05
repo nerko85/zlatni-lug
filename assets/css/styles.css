@@ -1782,8 +1782,8 @@ header .inner .contact span i {
 
 @media (min-width: 1400px) {
   .instagram--inner {
-    -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    -ms-grid-columns: (minmax(24vw, 1fr))[auto-fit];
+        grid-template-columns: repeat(auto-fit, minmax(24vw, 1fr));
   }
 }
 
