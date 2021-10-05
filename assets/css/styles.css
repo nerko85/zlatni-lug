@@ -1580,10 +1580,17 @@ header .inner .contact span i {
 .card--full .card--body .body--inner {
   border: 1px solid #ce8163;
   padding: 15rem 10rem;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .card--full .card--body .body--inner a {
@@ -1701,6 +1708,7 @@ header .inner .contact span i {
 .services a.read--more {
   display: inline-block;
   margin: 3rem 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
@@ -1972,6 +1980,7 @@ header .inner .contact span i {
   }
   .company--inner .company--about {
     padding: 0 3rem;
+    max-width: unset;
   }
 }
 
@@ -1981,13 +1990,14 @@ header .inner .contact span i {
 
 .about--slider .swiper-container {
   overflow: hidden;
+  position: relative;
 }
 
 .about--slider .swiper-container .swiper-horizontal > .swiper-pagination-bullets,
 .about--slider .swiper-container .swiper-pagination-bullets.swiper-pagination-horizontal,
 .about--slider .swiper-container .swiper-pagination-custom,
 .about--slider .swiper-container .swiper-pagination-fraction {
-  bottom: 35%;
+  bottom: 2rem;
 }
 
 .about--slider .img--wrapp {

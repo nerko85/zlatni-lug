@@ -199,8 +199,11 @@
       .body--inner {
         border: 1px solid $secoundary;
         padding: 15rem 10rem;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
+        justify-content: center;
         height: 100%;
+        display: flex;
+        flex-direction: column;
 
         a {
           display: inline-block;
@@ -310,6 +313,7 @@
   a.read--more {
     display: inline-block;
     margin: 3rem 0;
+    cursor: pointer;
   }
 
   @media screen and (max-width: $tablet) {
@@ -516,11 +520,13 @@
       .img--wrapp {
         height: 300px;
       }
+
       .ceo--section {
         display: none;
       }
     }
   }
+
   @media (max-width: $desktop) {
     padding: 2rem 0;
     &--inner {
@@ -538,6 +544,7 @@
 
       .company--about {
         padding: 0 3rem;
+        max-width: unset;
       }
     }
   }
@@ -548,11 +555,13 @@
 
   .swiper-container {
     overflow: hidden;
+    position: relative;
+
     .swiper-horizontal > .swiper-pagination-bullets,
     .swiper-pagination-bullets.swiper-pagination-horizontal,
     .swiper-pagination-custom,
     .swiper-pagination-fraction {
-      bottom: 35%;
+      bottom: 2rem;
     }
   }
 
