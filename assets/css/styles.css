@@ -1348,6 +1348,7 @@ header .inner .contact span i {
   display: -ms-flexbox;
   display: flex;
   background: url("../images/main-hero-bg.jpg") no-repeat center;
+  background-size: cover;
 }
 
 .cover::after {
