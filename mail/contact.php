@@ -9,13 +9,12 @@ if ($contentType === "application/json") {
 
   //If json_decode failed, the JSON is invalid.
   if(! is_array($decoded)) {
-
+    echo $decoded;
   } else {
-    // Send error back to user.
+    echo "Some error happened";
   }
 }
 
-echo $decoded;
 // $data = json_decode($_POST);
 
 
