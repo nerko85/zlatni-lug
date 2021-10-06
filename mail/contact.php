@@ -7,7 +7,7 @@ if ($contentType === "application/json") {
 
   $decoded = json_decode($content, true);
 
-  echo $decoded;
+  printf($decoded);
 
   //If json_decode failed, the JSON is invalid.
   if(! is_array($decoded)) {
