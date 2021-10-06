@@ -547,6 +547,8 @@
         } else {
           fetch("./mail/contact.php", {
             method: "POST",
+            mode: "same-origin",
+            credentials: "same-origin",
             headers: {
               'Content-Type': 'application/json'
             },
