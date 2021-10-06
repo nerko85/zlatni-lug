@@ -1,6 +1,6 @@
 <?php
-
-echo $_POST;
+$data = json_decode($_POST);
+echo $data;
 // $data = json_decode($_POST);
 
 
