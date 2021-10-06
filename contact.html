@@ -554,9 +554,7 @@
             },
             body: JSON.stringify(formData),
           })
-            .then((res) => {
-              res.json();
-            })
+            .then((res) => res.json())
             .then((res) => form.reset())
             .catch((err) => console.log(err));
         }
