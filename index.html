@@ -68,6 +68,19 @@
   </head>
 
   <body>
+
+    <secton class="video--overlay">
+      <div class="inner">
+        <span class="video--close">
+          <i class="bi bi-x"></i>
+        </span>
+        <iframe 
+        id="lug--video"
+src="https://www.youtube.com/embed/TDPtfIJBLdM" allowscriptaccess="always" allow='autoplay' frameborder="0" allowfullscreen>
+</iframe>
+      </div>
+    </secton>
+
     <header>
       <div class="container-fluid">
         <div class="inner">
@@ -117,8 +130,8 @@
           </h3>
           <p class="cover--video">
             <a
-              href="https://www.youtube.com/watch?v=TDPtfIJBLdM"
-              target="blank"
+              href="#"
+              id="video-activate"
             >
               <span class="circle">
                 <i class="bi bi-play-fill"></i>
@@ -775,6 +788,24 @@
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
+
+      const videoBtn = document.getElementById("video-activate");
+      const videoFrame = document.querySelector(".video--overlay");
+      const closeBtn = document.querySelector('.video--close');
+      const lugVideo = document.getElementById('lug--video');
+
+      function removeActive(){
+        document.body.classList.remove("active");
+          lugVideo.src = "https://www.youtube.com/embed/TDPtfIJBLdM";
+      }
+
+      closeBtn.addEventListener('click', removeActive);
+      videoFrame.addEventListener('click', removeActive);
+
+      videoBtn.addEventListener("click", ()=>{
+        document.body.classList.toggle('active');
+      });
+
       window.ga = function () {
         ga.q.push(arguments);
       };
@@ -922,6 +953,8 @@
       }, options);
 
       obs.observe(service);
+
+  
     </script>
   </body>
 </html>
