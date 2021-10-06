@@ -2,6 +2,8 @@
 
 $data = json_decode($_POST);
 
+echo $data;
+
 $to = 'nermin@forgeit.qa';
 $subject = 'Poruka sa webstranice';
 $headers = 'From: www.lug.ba' . "\r\n" . 'Content-type: text/html; charset=utf-8';
@@ -11,7 +13,7 @@ $message = '
 		<title>Your Site Contact Form</title>
 	</head>
 	<body>
-		<h4>Name: <span style="font-weight: normal;">' . $data['name'] . '</span></h4>
+		<h4>Name: <span style="font-weight: normal;">' . $data->name . '</span></h4>
 		<h4>Email: <span style="font-weight: normal;">' . $data['email'] . '</span></h4>
 		<h4>Phohe number: <span style="font-weight: normal;">' . $data['telephone'] . '</span></h4>
 		<div>
