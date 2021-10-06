@@ -18,8 +18,6 @@ if (window.innerWidth < 768) {
   gsap.to(items, { duration: 0, opacity: 0, y: 50 });
 }
 
-console.log("test");
-
 const tl2 = gsap.timeline({ paused: true });
 tl2
   .to(nav, {
