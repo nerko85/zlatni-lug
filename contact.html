@@ -552,7 +552,7 @@
           $.ajax({
               type: 'POST',
               url: '/mail/contact.php',
-              data: $('form').serialize(),
+              data: form.serialize(),
               dataType: 'application/json'
           }).done( function( data ) {
             console.log(data);
@@ -566,10 +566,14 @@
                 messages.removeChild(message);
               },2000);
           }).fail( function( data ) {
-            console.log(data);
-              errors.push(data.responseText);
+            if(data.responseText === "success"){
+              message.textContent = "Vasa poruka je uspjesno poslana";
+              messages.appendChild(message);
+              document.getElementsByTagName("form")[0].reset();
+            }
               setTimeout(()=>{
-                errors = [];
+                message.textContent = "";
+                messages.removeChild(message);
               },2000);
           })
 
