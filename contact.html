@@ -554,14 +554,9 @@
               url: '/mail/contact.php',
               data: $('form').serialize(),
               dataType: 'application/json'
-          })
-          .done( function( data ) {
+          }).done( function( data ) {
               console.log('done');
-              console.log(data);
-          })
-          .fail( function( data ) {
-              console.log('fail');
-              console.log(data);
+              console.log(data.responseText);
           });
 
           // fetch("http://zlatnilug.forgeit.qa/mail/contact.php", {
