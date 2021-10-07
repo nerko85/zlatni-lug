@@ -1070,14 +1070,14 @@
       list-style: none;
       font-size: 1.4rem;
 
-      &.error {
+      &.message-error {
         li {
           padding: 0.5rem 0;
           color: red;
         }
       }
 
-      &.success {
+      &.message-success {
         li {
           padding: 0.5rem 0;
           color: green;

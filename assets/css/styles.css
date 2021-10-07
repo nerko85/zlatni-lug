@@ -2584,12 +2584,12 @@ header .inner .contact span i {
   font-size: 1.4rem;
 }
 
-.form--inner ul.error li {
+.form--inner ul.message-error li {
   padding: 0.5rem 0;
   color: red;
 }
 
-.form--inner ul.success li {
+.form--inner ul.message-success li {
   padding: 0.5rem 0;
   color: green;
 }
