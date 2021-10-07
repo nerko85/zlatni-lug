@@ -556,6 +556,7 @@
           }).done( function( data ) {
             console.log(data);
             if(data == "success"){
+              const message = document.createElement("li");
               message.textContent = "Vasa poruka je uspjesno poslana";
               messages.appendChild(message);
               document.getElementsByTagName("form")[0].reset();
@@ -565,6 +566,7 @@
                 messages.removeChild(message);
               },2000);
           }).fail( function( data ) {
+              const message = document.createElement("li");
               message.textContent = "Desila se neka greska";
               messages.appendChild(message);
               setTimeout(()=>{
