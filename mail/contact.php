@@ -23,7 +23,7 @@
 
 $to = 'nermin@forgeit.qa';
 $subject = 'Poruka sa webstranice';
-$headers = 'From: www.lug.ba' . "\r\n" . 'Content-type: text/html; charset=utf-8';
+$headers = 'From: www.zlatnilug.ba';
 $message = '
 <html>
 	<head>
