@@ -566,6 +566,7 @@
                 messages.removeChild(message);
               },2000);
           }).fail( function( data ) {
+            console.log(data);
               errors.push(data.responseText);
               setTimeout(()=>{
                 errors = [];
