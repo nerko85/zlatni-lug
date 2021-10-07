@@ -1850,6 +1850,9 @@ header .inner .contact span i {
   .contact--content {
     width: 80%;
   }
+  .contact--content h1 a {
+    font-size: 4rem;
+  }
 }
 
 .instagram--inner {
