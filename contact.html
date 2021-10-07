@@ -551,7 +551,7 @@
               type: 'POST',
               url: '/mail/contact.php',
               data: {json: JSON.stringify(formData)},
-              dataType: 'json'
+              dataType: 'application/json'
           })
           .done( function( data ) {
               console.log('done');
