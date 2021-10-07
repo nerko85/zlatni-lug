@@ -1,24 +1,22 @@
 <?php
 
-printf("Testiranje");
+$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
-// $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+if ($contentType === "application/json") {
+  //Receive the RAW post data.
+  $content = trim(file_get_contents("php://input"));
 
-// if ($contentType === "application/json") {
-//   //Receive the RAW post data.
-//   $content = trim(file_get_contents("php://input"));
+  $decoded = json_decode($content, true);
 
-//   $decoded = json_decode($content, true);
+  printf($decoded);
 
-//   printf($decoded);
-
-//   //If json_decode failed, the JSON is invalid.
-//   if(! is_array($decoded)) {
-//     echo "There is an error in JSON";
-//   } else {
-//     echo "Some error happened";
-//   }
-// }
+  //If json_decode failed, the JSON is invalid.
+  if(! is_array($decoded)) {
+    echo "There is an error in JSON";
+  } else {
+    echo "Some error happened";
+  }
+}
 
 // $data = json_decode($_POST);
 

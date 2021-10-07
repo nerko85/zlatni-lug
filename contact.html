@@ -247,6 +247,7 @@
       ga("send", "pageview");
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
       // GOOGLE MAP
@@ -545,19 +546,35 @@
             messages.appendChild(message);
           });
         } else {
-          fetch("http://zlatnilug.forgeit.qa/mail/contact.php", {
-            method: "POST",
-            mode: "same-origin",
-            credentials: "same-origin",
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData),
+
+          $.ajax({
+              type: 'POST',
+              url: '/mail/contact.php',
+              data: {json: JSON.stringify(formData)},
+              dataType: 'json'
           })
-            .then((res) => res.json())
-            .then((res) => form.reset())
-            .catch((err) => console.log(err));
-        }
+          .done( function( data ) {
+              console.log('done');
+              console.log(data);
+          })
+          .fail( function( data ) {
+              console.log('fail');
+              console.log(data);
+          });
+
+        //   fetch("http://zlatnilug.forgeit.qa/mail/contact.php", {
+        //     method: "POST",
+        //     mode: "same-origin",
+        //     credentials: "same-origin",
+        //     headers: {
+        //       'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(formData),
+        //   })
+        //     .then((res) => res.json())
+        //     .then((res) => form.reset())
+        //     .catch((err) => console.log(err));
+        // }
       });
     </script>
   </body>
