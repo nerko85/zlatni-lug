@@ -557,9 +557,12 @@
           }).done( function( data ) {
             if(data === "success"){
               message.textContent = "Vasa poruka je uspjesno poslana";
+              messages.appendChild(message);
+              $('form').reset;
             }
               setTimeout(()=>{
                 message.textContent = "";
+                messages.removeChild(message);
               },2000);
           }).fail( function( data ) {
               errors.push(data.responseText);
