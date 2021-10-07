@@ -638,6 +638,10 @@ a.read--more:hover i {
   color: #e4001b;
 }
 
+.hidden {
+  display: none;
+}
+
 .subtitle {
   font-family: "Cormorant";
   font-size: 34px;
@@ -1646,7 +1650,7 @@ header .inner .contact span i {
 
 .card--full .card--img img {
   min-height: 700px;
-  height: 100%;
+  height: auto;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -2132,7 +2136,6 @@ header .inner .contact span i {
 }
 
 .team p {
-  width: 50%;
   max-width: 768px;
   margin: 0 auto;
   font-size: 1.4rem;
@@ -2153,13 +2156,6 @@ header .inner .contact span i {
 .team--inner .team--card:nth-child(5) {
   -ms-grid-column: 2;
   grid-column: 2;
-}
-
-.team--inner .team--card .card--img {
-  padding: 0.6rem;
-  border: 1px solid #ce8163;
-  border-radius: 100px;
-  overflow: hidden;
 }
 
 .team--inner .team--card .card--text {
