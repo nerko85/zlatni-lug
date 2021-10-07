@@ -295,6 +295,10 @@ a.read--more:hover i {
   color: #e4001b;
 }
 
+.hidden {
+  display: none;
+}
+
 .subtitle {
   font-family: "Cormorant";
   font-size: 34px;

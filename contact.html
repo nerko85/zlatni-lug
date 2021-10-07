@@ -163,7 +163,7 @@
               <button type="submit">POŠALJI PORUKU</button>
             </div>
           </form>
-          <ul class="messages"></ul>
+          <ul class="messages hidden"></ul>
         </div>
       </div>
     </section>
@@ -566,7 +566,7 @@
               setTimeout(()=>{
                 message.textContent = "";
                 messages.classList.remove("message-success");
-                messages.removeChild(message);
+                messages.innerHTML = "";
               },2000);
           }).fail( function( data ) {
               const message = document.createElement("li");
@@ -576,7 +576,7 @@
               setTimeout(()=>{
                 message.textContent = "";
                 messages.classList.remove("message-error");
-                messages.removeChild(message);
+                messages.innerHTML = "";
               },2000);
           })
         }
