@@ -2007,7 +2007,6 @@ header .inner .contact span i {
 
 .company--inner .img--section .ceo--section .inner .ceo--details > span img {
   width: 100%;
-  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
