@@ -547,10 +547,13 @@
           });
         } else {
 
+          var data = {foo: 'blah "!"', bar: 123};
+
+
           $.ajax({
               type: 'POST',
               url: '/mail/contact.php',
-              data: {json: JSON.stringify(formData)},
+              data: {json: JSON.stringify(data)},
               dataType: 'application/json'
           })
           .done( function( data ) {
