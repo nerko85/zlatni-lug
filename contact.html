@@ -552,8 +552,7 @@
           $.ajax({
               type: 'POST',
               url: '/mail/contact.php',
-              data: form.serialize(),
-              dataType: 'application/json'
+              data: $("form").serialize()
           }).done( function( data ) {
             console.log(data);
             if(data == "success"){
@@ -566,11 +565,8 @@
                 messages.removeChild(message);
               },2000);
           }).fail( function( data ) {
-            if(data.responseText === "success"){
-              message.textContent = "Vasa poruka je uspjesno poslana";
+              message.textContent = "Desila se neka greska";
               messages.appendChild(message);
-              document.getElementsByTagName("form")[0].reset();
-            }
               setTimeout(()=>{
                 message.textContent = "";
                 messages.removeChild(message);
