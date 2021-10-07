@@ -1650,6 +1650,7 @@ header .inner .contact span i {
 
 .card--full .card--img img {
   min-height: 700px;
+  height: 100%;
   height: auto;
   width: 100%;
   -o-object-fit: cover;
