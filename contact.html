@@ -555,11 +555,17 @@
               data: $('form').serialize(),
               dataType: 'application/json'
           }).done( function( data ) {
-              console.log('done');
-              console.log(data.responseText);
+            if(data === "success"){
+              message.textContent = "Vasa poruka je uspjesno poslana";
+            }
+              setTimeout(()=>{
+                message.textContent = "";
+              },2000);
           }).fail( function( data ) {
-              console.log('done');
-              console.log(data.responseText);
+              errors.push(data.responseText);
+              setTimeout(()=>{
+                errors = [];
+              },2000);
           })
 
           // fetch("http://zlatnilug.forgeit.qa/mail/contact.php", {
