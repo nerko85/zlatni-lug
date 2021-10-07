@@ -549,7 +549,7 @@
 
           var data = {foo: 'blah "!"', bar: 123};
           var xhr = new XMLHttpRequest();
-          xhr.open("POST", "test.php");
+          xhr.open("POST", "/mail/contact.php");
           xhr.onreadystatechange = function() { if (xhr.readyState === 4 && xhr.status === 200) { console.log(xhr.responseText); } }
           xhr.setRequestHeader("Content-type", "application/json") // or "text/plain"
           xhr.send(JSON.stringify(data)); 
