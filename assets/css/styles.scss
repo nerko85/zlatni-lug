@@ -628,8 +628,10 @@
   }
 
   .img--wrapp {
-    max-height: 452px;
+    // max-height: 452px;
+    max-height: 500px;
     overflow: hidden;
+    display: flex;
 
     img {
       height: 100%;
@@ -700,10 +702,10 @@
       }
 
       .card--img {
-        // padding: 0.6rem;
-        // border: 1px solid $secoundary;
-        // border-radius: 100px;
-        // overflow: hidden;
+        padding: 0.6rem;
+        border: 1px solid $secoundary;
+        border-radius: 100px;
+        overflow: hidden;
       }
 
       .card--text {

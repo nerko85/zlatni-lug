@@ -2084,8 +2084,11 @@ header .inner .contact span i {
 }
 
 .about--slider .img--wrapp {
-  max-height: 452px;
+  max-height: 500px;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .about--slider .img--wrapp img {
@@ -2156,6 +2159,13 @@ header .inner .contact span i {
 .team--inner .team--card:nth-child(5) {
   -ms-grid-column: 2;
   grid-column: 2;
+}
+
+.team--inner .team--card .card--img {
+  padding: 0.6rem;
+  border: 1px solid #ce8163;
+  border-radius: 100px;
+  overflow: hidden;
 }
 
 .team--inner .team--card .card--text {
