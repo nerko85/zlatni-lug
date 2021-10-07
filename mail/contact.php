@@ -6,13 +6,13 @@ if ($contentType === "application/json") {
   //Receive the RAW post data.
   $content = trim(file_get_contents("php://input"));
 
-  $decoded = json_decode($content, true);
+  $data = json_decode($content, true);
 
-  printf($decoded);
+echo $data;
 
   //If json_decode failed, the JSON is invalid.
-  if(! is_array($decoded)) {
-    echo "There is an error in JSON";
+  if(! is_array($data)) {
+    echo $data;
   } else {
     echo "Some error happened";
   }
