@@ -1834,7 +1834,9 @@ header .inner .contact span i {
   text-align: center;
 }
 
-.contact--content h1 {
+.contact--content h1 a {
+  font-size: 6.8rem;
+  font-weight: bold;
   color: #ce8163;
 }
 
@@ -1998,6 +2000,9 @@ header .inner .contact span i {
   width: 50px;
   height: 50px;
   margin-right: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #ffcb84;
 }
 
 .company--inner .img--section .ceo--section .inner .ceo--details > span img {
