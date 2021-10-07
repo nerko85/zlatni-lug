@@ -1,22 +1,24 @@
 <?php
 
-$contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+echo $_POST['name'];
 
-if ($contentType === "application/json") {
-  //Receive the RAW post data.
-  $content = trim(file_get_contents("php://input"));
+// $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
 
-  $data = json_decode($content, true);
+// if ($contentType === "application/json") {
+//   //Receive the RAW post data.
+//   $content = trim(file_get_contents("php://input"));
 
-echo $data;
+//   $data = json_decode($content, true);
 
-  //If json_decode failed, the JSON is invalid.
-  if(! is_array($data)) {
-    echo $data;
-  } else {
-    echo "Some error happened";
-  }
-}
+// echo $data;
+
+//   //If json_decode failed, the JSON is invalid.
+//   if(! is_array($data)) {
+//     echo $data;
+//   } else {
+//     echo "Some error happened";
+//   }
+// }
 
 // $data = json_decode($_POST);
 

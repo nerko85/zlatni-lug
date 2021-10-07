@@ -146,7 +146,7 @@
       <div class="container">
         <div class="form--inner">
           <h2>Pišite nam</h2>
-          <form action="./main/contact.php" method="POST">
+          <form action="./mail/contact.php" method="POST">
             <div class="form--group">
               <input type="text" name="name" placeholder="Vaše ime i prezime" />
               <input type="tel" name="telephone" placeholder="Broj telefona" />
@@ -515,7 +515,8 @@
 
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        const formData = {};
+        // const formData = {};
+        const formData = new FormData();
         let errors = [];
         Array.from(e.currentTarget.elements).forEach((field) => {
           field.addEventListener("focus", () => {
@@ -536,7 +537,8 @@
             messages.textContent = "";
           }, 4000);
 
-          formData[field.name] = field.value;
+          // formData[field.name] = field.value;
+          formData.append(field.name, field.value);
         });
 
         if (errors.length) {
@@ -546,28 +548,23 @@
             messages.appendChild(message);
           });
         } else {
-
-          var data = {foo: 'blah "!"', bar: 123};
-          var xhr = new XMLHttpRequest();
-          xhr.open("POST", "/mail/contact.php");
-          xhr.onreadystatechange = function() { if (xhr.readyState === 4 && xhr.status === 200) { console.log(xhr.responseText); } }
-          xhr.setRequestHeader("Content-type", "application/json") // or "text/plain"
-          xhr.send(JSON.stringify(data)); 
-
-          // $.ajax({
-          //     type: 'POST',
-          //     url: '/mail/contact.php',
-          //     data: {json: JSON.stringify(data)},
-          //     dataType: 'application/json'
-          // })
-          // .done( function( data ) {
-          //     console.log('done');
-          //     console.log(data);
-          // })
-          // .fail( function( data ) {
-          //     console.log('fail');
-          //     console.log(data);
-          // });
+          for (var p of formData) {
+  console.log(p);
+}
+          $.ajax({
+              type: 'POST',
+              url: '/mail/contact.php',
+              data: {json: JSON.stringify(formData)},
+              dataType: 'application/json'
+          })
+          .done( function( data ) {
+              console.log('done');
+              console.log(data);
+          })
+          .fail( function( data ) {
+              console.log('fail');
+              console.log(data);
+          });
 
           // fetch("http://zlatnilug.forgeit.qa/mail/contact.php", {
           //   method: "POST",
