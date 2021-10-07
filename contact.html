@@ -555,10 +555,11 @@
               data: $('form').serialize(),
               dataType: 'application/json'
           }).done( function( data ) {
-            if(data === "success"){
+            console.log(data);
+            if(data == "success"){
               message.textContent = "Vasa poruka je uspjesno poslana";
               messages.appendChild(message);
-              form.reset();
+              document.getElementsByTagName("form")[0].reset();
             }
               setTimeout(()=>{
                 message.textContent = "";
