@@ -554,7 +554,7 @@
           $.ajax({
               type: 'POST',
               url: '/mail/contact.php',
-              data: {json: JSON.stringify(formData)},
+              data: {json: formData},
               dataType: 'application/json'
           })
           .done( function( data ) {
