@@ -554,7 +554,7 @@
               url: '/mail/contact.php',
               data: $('form').serialize(),
               dataType: 'application/json'
-          }).done( function( data ) {
+          }).success( function( data ) {
               console.log('done');
               console.log(data.responseText);
           });
