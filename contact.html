@@ -548,13 +548,11 @@
             messages.appendChild(message);
           });
         } else {
-          for (var p of formData) {
-  console.log(p);
-}
+
           $.ajax({
               type: 'POST',
               url: '/mail/contact.php',
-              data: {json: formData},
+              data: $('form').serialize(),
               dataType: 'application/json'
           })
           .done( function( data ) {
