@@ -558,7 +558,7 @@
             console.log(data);
             if(data == "success"){
               const message = document.createElement("li");
-              message.textContent = "Vasa poruka je uspjesno poslana";
+              message.textContent = "Vaša poruka je uspjesno poslana";
               messages.classList.add("message-success");
               messages.appendChild(message);
               document.getElementsByTagName("form")[0].reset();
@@ -570,7 +570,7 @@
               },2000);
           }).fail( function( data ) {
               const message = document.createElement("li");
-              message.textContent = "Desila se neka greska";
+              message.textContent = "Desila se neka greška. Molimo pokušajte ponovo.";
               messages.classList.add("message-error");
               messages.appendChild(message);
               setTimeout(()=>{
