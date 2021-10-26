@@ -25,5 +25,5 @@ jobs:
           server: ftp.zlatnilug.ba
           server-dir: ./
           username: ${{ secrets.LUG_ADMIN }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: ${{ secrets.LUG_PASSWORD }}
           local-dir: ./
