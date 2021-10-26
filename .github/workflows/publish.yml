@@ -22,7 +22,7 @@ jobs:
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
         with:
-          server: ftp.forgeit.qa
+          server: ftp.zlatnilug.ba
           server-dir: ./
           username: ${{ secrets.LUG_ADMIN }}
           password: ${{ secrets.FTP_PASSWORD }}
