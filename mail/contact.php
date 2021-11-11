@@ -1,27 +1,6 @@
 <?php
 
-// $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
-
-// if ($contentType === "application/json") {
-//   //Receive the RAW post data.
-//   $content = trim(file_get_contents("php://input"));
-
-//   $data = json_decode($content, true);
-
-// echo $data;
-
-//   //If json_decode failed, the JSON is invalid.
-//   if(! is_array($data)) {
-//     echo $data;
-//   } else {
-//     echo "Some error happened";
-//   }
-// }
-
-// $data = json_decode($_POST);
-
-
-$to = 'nermin@forgeit.qa';
+$to = 'info@zlatnilug.ba';
 $subject = 'Poruka sa webstranice';
 $headers = 'From: www.zlatnilug.ba' . "\r\n" . 'Content-type: text/html; charset=utf-8';
 $message = '
